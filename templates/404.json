@@ -1,14 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-
-"name":"Not Found Page",
-"sections":{
-"404Section":{
-    "type":"404_Section"
-}
-
-},
-"order":["404Section"]
-
-
-
+  "sections": {
+    "404Section": {
+      "type": "404_Section",
+      "settings": {
+        "Image": "shopify://shop_images/404Page.jpg",
+        "Paragraph": "Your visited page not found. You may go home page.",
+        "Url": "/",
+        "Text": "Back to home page"
+      }
+    }
+  },
+  "order": [
+    "404Section"
+  ]
 }
