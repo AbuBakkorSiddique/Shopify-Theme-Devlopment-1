@@ -107,11 +107,24 @@
         "item_RmDWkr"
       ],
       "settings": {}
+    },
+    "service_section_KwXQpa": {
+      "type": "Service_section",
+      "name": "Service Section ",
+      "settings": {
+        "title_one": "FREE AND FAST DELIVERY",
+        "paragraph_one": "Free delivery for all orders over $140",
+        "title_two": "24/7 CUSTOMER SERVICE",
+        "Paragraph_two": "Friendly 24/7 customer support",
+        "Title_three": "MONEY BACK GUARANTEE",
+        "Paragraph_three": "We reurn money within 30 days"
+      }
     }
   },
   "order": [
     "Image_with_text",
     "HighlightSection",
-    "CarosuleTeam"
+    "CarosuleTeam",
+    "service_section_KwXQpa"
   ]
 }
