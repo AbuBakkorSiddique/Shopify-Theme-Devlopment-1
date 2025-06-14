@@ -16,7 +16,7 @@
         "Hero_Heading": "iPhone 14 Series",
         "Hero_Bold_text": "Up to 10% off Voucher",
         "Hero_Button_text": "Shop Now",
-        "Button_url": "/"
+        "Button_url": "shopify://collections/all"
       }
     },
     "FlashSlae": {
@@ -30,7 +30,7 @@
           "havit-hv-g92-gamepad",
           "ips-lcd-gaming-monitor"
         ],
-        "Link": "/"
+        "Link": "shopify://collections/all"
       }
     },
     "Category": {
