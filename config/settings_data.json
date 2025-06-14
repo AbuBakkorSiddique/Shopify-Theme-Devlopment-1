@@ -22,7 +22,7 @@
       "navigationbar": {
         "type": "navigationbar",
         "settings": {
-          "Navigation_Menu": "",
+          "Navigation_Menu": "customnavbar",
           "wishlishLink": ""
         }
       },
