@@ -39,6 +39,35 @@
     },
     "CarosuleTeam": {
       "type": "Carosule_Team",
+      "blocks": {
+        "item_mJYbxi": {
+          "type": "Item",
+          "settings": {
+            "ImagePiker": "shopify://shop_images/Frame_874.png",
+            "Heading": "Tom Cruise",
+            "SubText": "Founder & Chairman"
+          }
+        },
+        "item_hRkfpj": {
+          "type": "Item",
+          "settings": {
+            "Heading": "Tom Cruise",
+            "SubText": "Founder & Chairman"
+          }
+        },
+        "item_RmDWkr": {
+          "type": "Item",
+          "settings": {
+            "Heading": "Tom Cruise",
+            "SubText": "Founder & Chairman"
+          }
+        }
+      },
+      "block_order": [
+        "item_mJYbxi",
+        "item_hRkfpj",
+        "item_RmDWkr"
+      ],
       "settings": {}
     }
   },
