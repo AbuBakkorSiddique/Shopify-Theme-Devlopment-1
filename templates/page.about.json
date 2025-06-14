@@ -51,7 +51,8 @@
         "item_hRkfpj": {
           "type": "Item",
           "settings": {
-            "Heading": "Tom Cruise",
+            "ImagePiker": "shopify://shop_images/Frame_875.png",
+            "Heading": "Liana",
             "SubText": "Founder & Chairman"
           }
         },
