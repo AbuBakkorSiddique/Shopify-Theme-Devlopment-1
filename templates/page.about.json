@@ -1,17 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-
-"name":"About Us ",
-"sections":{
-    "Image_with_text":{
-        "type":"Image_with_Text.liquid"
+  "sections": {
+    "Image_with_text": {
+      "type": "Image_with_Text",
+      "blocks": {
+        "text_wTe73b": {
+          "type": "text",
+          "settings": {
+            "heading": "Our Story",
+            "paragraph1": "Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region.",
+            "paragraph2": "Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer."
+          }
+        },
+        "image_cBcJNd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Side_Image.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_wTe73b",
+        "image_cBcJNd"
+      ],
+      "settings": {}
     },
-    "HighlightSection":{
-        "type":"Hilight_section"
+    "HighlightSection": {
+      "type": "Hilight_section",
+      "settings": {}
     },
-    "CarosuleTeam":{
-        "type":"Carosule_Team"
+    "CarosuleTeam": {
+      "type": "Carosule_Team",
+      "settings": {}
     }
-},
-"order":["Image_with_text","HighlightSection","CarosuleTeam"]
-
+  },
+  "order": [
+    "Image_with_text",
+    "HighlightSection",
+    "CarosuleTeam"
+  ]
 }
