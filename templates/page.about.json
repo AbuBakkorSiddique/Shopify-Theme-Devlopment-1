@@ -59,7 +59,8 @@
         "item_RmDWkr": {
           "type": "Item",
           "settings": {
-            "Heading": "Tom Cruise",
+            "ImagePiker": "shopify://shop_images/Frame_876.png",
+            "Heading": "Bobie Rudes",
             "SubText": "Founder & Chairman"
           }
         }
