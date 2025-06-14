@@ -23,7 +23,7 @@
         "type": "navigationbar",
         "settings": {
           "Navigation_Menu": "customnavbar",
-          "wishlishLink": ""
+          "wishlishLink": "/pages/wish-list"
         }
       },
       "Fotter": {
