@@ -1,0 +1,11 @@
+{
+
+
+    "name":"Search Page ",
+    "sections":{
+        "Template":{
+            "type":"Search_Section"
+        }
+    },
+    "order":["Template"]
+}

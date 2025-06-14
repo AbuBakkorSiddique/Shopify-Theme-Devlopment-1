@@ -1,0 +1,223 @@
+<div class="w-full mx-auto  lg:max-w-[100vw] h-[15vh] px-[3vw] md:px-[8vw] lg:px-[10vw] flex justify-between items-center relative  ">
+   
+
+
+
+
+
+    <!-- Brand Name -->
+    <div class="flex flex-row justify-center items-center gap-5 "> 
+  <!--------------- Three Dots ------------------------->
+
+
+<!-- === Three Dot Menu Button === -->
+<div class="h-full w-[10vw] flex justify-start items-center lg:hidden">
+  <button onclick="NavMenu()"> {% render 'Three_Dot' %} </button>
+</div>
+
+<!-- === Fullscreen Mobile Menu === -->
+<div id="Menu" class="MobileMenu hidden absolute min-h-[100vh] w-full h-screen inset-0 z-50 bg-slate-300 flex-col justify-center items-center gap-5 transition-all duration-300">
+  
+<div class="w-full min-h-[10vh]  grid grid-cols-3 bg-black border  ">
+
+  <div class="text-2xl font-bold flex justify-center items-center px-[3vw]   text-white   ">
+    <p>  Menu  </p>
+    
+  </div>
+<div>
+  </div>
+  
+    <div class="w-full h-full flex justify-center items-center ">
+            <!-- Close Button -->
+  <button onclick="NavMenu()" class=" top-5 right-5 text-2xl font-bold  text-white  px-4 py-2 rounded-full">
+    ✕
+  </button>
+    
+    </div>
+
+
+  </div>
+
+
+  <div class="w-full h-full flex flex-col justify-center items-center gap-5 ">
+
+
+
+  <!-- Menu Content -->
+
+ {% for link in linklists[section.settings.Navigation_Menu].links %}
+<h1 class="text-xl hover:border-b hover:border-black pb-1">
+  <a href="{{ link.url }}">{{ link.title }}</a>
+</h1>
+    {% endfor %}
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+  <!----------------  Three Dots Finish ---------------------------------->
+
+
+
+
+<a href="/">
+{% if settings.logo  %}
+
+ 
+   <img src=" {{ settings.logo |image_url }}" alt="{{ settings.name }}" class="pr-10">
+    {% else %}
+          <h1 class="font-bold text-xl lg:text-2xl">   {{ settings.name }} </h1>
+
+    {% endif %}
+    </a>
+
+    </div>
+    <!-- Menu Items-->
+    <div class="flex flex-row gap-5 hidden lg:flex"> 
+
+ {% for link in linklists[section.settings.Navigation_Menu].links %}
+    <a href="{{ link.url }}"> {{ link.title }} </a>
+
+    {% endfor %}
+
+    </div>
+    <!-- Icons-->
+    <div class="flex flex-row justify-between gap-3 lg:gap-5 items-center "> 
+  <!-- Search Area-->
+    <div class="h-6vh w-20vw bg-[#F5F5F5]"> 
+   <form action="/search" method="get" class="border border-white p-2 flex gap-8 w-full h-full">
+        <input type="text" name="q" placeholder="What are you looking for" class="border-none outline-none text-sm" />
+        <button type="submit" class=" "> {% render 'search_icons'  | asset_url %}</button>
+      </form>
+
+
+    </div>
+    
+    <!-- Heart / WIsh LIst  -->
+
+    <a href="{{ section.settings.wishlishLink }}"> 
+    <div>
+        {% render 'love_icons' | asset_url %}
+    </div>
+    </a>
+    <!-- Cart Icons -->
+      <div>
+  <a href="{{ routes.cart_url }}">
+    
+  <div class="relative  ">
+     <span>  {% render 'Buy_incons' | asset_url %} </span>
+    {% if cart.item_count > 0 %}
+ <span class="absolute  -top-5"> {{ cart.item_count }} </span>
+      {% endif %}
+   </div>
+  </a>
+
+        
+    </div>
+    <!-- user Icons -->
+       <div>
+    
+
+    {% if customer %}
+           <a href=" {{ routes.account_url }}"> 
+            {% render 'User_Icons' | asset_url %}  
+          </a>
+          
+         
+            {% else %}
+              <a  href="{{ routes.account_register_url }}"> 
+
+                {% render 'Log_In' | asset_url %}
+              </a>
+         
+
+
+            {% endif %}
+   
+    
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+   
+        
+    </div>
+
+
+
+
+
+
+    
+
+
+
+    {% schema %}
+
+    {
+    
+    "name": "Navigation Bar ",
+    "settings": [
+        {
+            "type": "link_list",
+            "id": "Navigation_Menu",
+             "label": "Navigation Bar Menu"
+    },
+    {
+    "type":"url",
+    "id":"wishlishLink",
+     "label":"Wish List Label"
+    
+    }
+
+]
+    
+    
+    
+    
+    }
+
+    {% endschema %}
+
+
+
+
+
+    <!-- JavaScript -->
+
+<script>
+  let visible = false;
+
+  function NavMenu() {
+    const menu = document.querySelector(".MobileMenu");
+
+    visible = !visible;
+
+    if (visible) {
+      menu.classList.remove("hidden");
+      menu.classList.add("flex");
+    } else {
+      menu.classList.remove("flex");
+      menu.classList.add("hidden");
+    }
+  }
+</script>
+
+
+
+    <!-- JavaScript Finish -->

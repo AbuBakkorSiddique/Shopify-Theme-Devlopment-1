@@ -1,0 +1,235 @@
+<div class="pt-5 lg:p-0 w-full mx-auto  max-w-[100vw] min-h-[100vh] lg:min-h-[72vh] bg-black px-[3vw] md:px-[8vw] lg:px-[10vw] flex flex-col justify-center items-center gap-8">
+  <!-- Main Footer Area -->
+  <div class="min-h-[80vh] lg:min-h-[42vh] w-full flex flex-col lg:flex-row justify-center lg:justify-between gap-5 items-start lg:items-center">
+    
+    <!-- Dynamic Blocks Render -->
+    {% for block in section.blocks %}
+      {% case block.type %}
+
+      {% when "subscribe" %}
+      <!-- --------------------- Exclusive --------------->  
+      <div class=" min-h-[30vh] lg:min-h-[42vh] w-full  lg:min-w-[16vw]  flex flex-col gap-5">
+        <h1 class="text-white text-xl font-bold">{{ block.settings.Exclusive_title }}</h1>
+        <p class="text-white font-bold">{{ block.settings.title_two }}</p>
+        <div class="flex flex-col gap-3">
+          <p class="text-white text-sm ">{{ block.settings.title_three }}</p>
+          <form class=" text-sm flex flex-row pt-3 pb-3 px-2 gap-5 text-white border border-white ">
+            <input type="email" placeholder="Enter your email" class="outline-none border-none bg-transparent text-white" />
+            <button type="submit" class="text-white">{% render 'Send_Icon' | asset_url %}</button>
+          </form>
+        </div>
+      </div>
+      <!-- --------------------- Exclusive Finish -->
+
+      {% when "support" %}
+      <!-- ------------------------ Support ------------------- -->
+      <div class=" min-h-[30vh] lg:min-h-[42vh] w-full lg:min-w-[14vw]  flex flex-col gap-5">
+        <h1 class="text-white font-bold text-xl">{{ block.settings.Title }}</h1>
+        <p class="text-white text-sm">{{ block.settings.Title_Two }}</p>
+        <p class="text-white text-sm">{{ block.settings.email }}</p>
+        <p class="text-white text-sm">+88015-88888-9999</p>
+      </div>
+      <!-- ------------------------ Support Finish  ------------------- -->
+
+      {% when "account" %}
+      <!-- ------------- Account   Start ------------------------ -->
+      <div class=" min-h-[30vh] lg:min-h-[42vh] w-full  lg:min-w-[10vw] flex flex-col gap-5">
+        <h1 class="text-white text-xl font-bold">Account</h1>
+        {% for  link in linklists[block.settings.Link_List].links %}
+            <a href="{{ link.url }}">
+                <p class="text-white text-sm"> {{ link.title }}</p>
+                </a>
+            {% endfor %}
+      </div>
+      <!-- ------------- Account   End ------------------------ -->
+
+      {% when "quickLink" %}
+      <!-- -------------------- Quick Link   Start -------------- -->
+      <div class=" w-full  lg:min-w-[10vw] min-h-[30vh] lg:min-h-[42vh]  flex flex-col gap-5">
+        <h1 class="text-white text-xl font-bold">Quick Link</h1>
+            {% for  link in linklists[block.settings.Link_LisT].links %}
+            <a href="{{ link.url }}">
+                <p class="text-white text-sm"> {{ link.title }}</p>
+                </a>
+            {% endfor %}
+      </div>
+      <!-- -------------------- Quick Link   Finish  -------------- -->
+
+      {% when "download_App" %}
+      <!-- ----------- Download App  Start ------------------ -->
+      <div class="w-full  lg:min-w-[15vw] min-h-[30vh] lg:min-h-[42vh]  flex flex-col gap-5">
+        <h1 class="text-white text-xl font-bold">Download App</h1>
+        <div class="flex flex-col gap-2">
+          <p class="text-white text-sm">Save $3 with App New User Only</p>
+          <img src="{{ block.settings.Image_Piker | image_url }}" alt="">
+
+        </div>
+
+        <div class=" flex flex-row gap-5">
+            <a href="">
+        <span class="text-white ">     {% render 'Facebook_icons'  %} </span>
+                </a>
+
+                     <a href="">
+        <span class="text-white ">     {% render 'Whats_app'  %} </span>
+                </a>
+
+
+                     <a href="">
+        <span class="text-white ">     {% render 'Instragram_icons'  %} </span>
+                </a>
+
+
+                     <a href="">
+        <span class="text-white ">     {% render 'Telegram_icons'  %} </span>
+                </a>
+
+        </div>
+      </div>
+      <!-- ----------- Download App  Finish  ------------------ -->
+
+      {% endcase %}
+    {% endfor %}
+  </div>
+
+  <!-- Footer Last Div -->
+  <div class=" min-h-[8vh] w-full flex justify-center items-center">
+    <p class="text-white text-sm">{{ section.settings.Fotter_End_Text }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Fotter Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "Fotter_End_Text",
+      "label": "Fotter End Text",
+      "default": "@ Copyright Rimel 2022. All right reserved"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subscribe",
+      "name": "Exclusive",
+      "settings": [
+   {
+
+"type": "text",
+"id": "Exclusive_title",
+"label": "Title",
+"default":"Exclusive"
+
+},
+{
+"type": "text",
+"id": "title_two",
+"label": "Title Two",
+"default":"Subscribe"
+
+},
+
+{
+"type": "text",
+"id": "title_three",
+"label": "Title Three",
+"default":"Get 10% off your first order"
+
+
+
+
+}
+
+      ]
+    },
+    {
+      "type": "support",
+      "name": "Support",
+      "settings": [
+
+{
+
+"type": "text",
+"id": "Title",
+"label": "Title",
+"default":"Support"
+
+},
+
+{
+"type": "text",
+"id": "Title_Two",
+"label": "Title Two",
+"default":"111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh."
+
+
+},
+{
+"type": "text",
+"id": "email",
+"label": "Email",
+"default":"exclusive@gmail.com"
+
+},
+
+{
+"type": "text",
+"id": "Phone",
+"label": "Phone Number ",
+"default":"+88015-88888-9999"
+
+
+}
+
+
+
+      ]
+    },
+    {
+      "type": "account",
+      "name": "Account",
+      "settings": [
+      {
+    "type": "link_list",
+    "id": "Link_List",
+    "label": "Link List "
+    
+    
+    }
+
+      ]
+    },
+    {
+      "type": "quickLink",
+      "name": "Quick Link",
+      "settings": [
+{
+"type": "link_list",
+"id": "Link_LisT",
+"label": "Link List "
+
+}
+
+
+      ]
+    },
+    {
+      "type": "download_App",
+      "name": "Download App",
+      "settings": [
+{
+"type":"image_picker",
+"id": "Image_Piker",
+"label": "Image"
+
+
+}
+
+
+      ]
+    }
+  ],
+  "max_blocks": 5
+}
+{% endschema %}

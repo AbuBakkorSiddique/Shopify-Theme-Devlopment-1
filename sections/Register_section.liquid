@@ -1,0 +1,96 @@
+<style>
+.LeftSide{
+background-image:url("{{ section.settings.Image |image_url }}") ; 
+
+}
+    </style>
+
+
+
+<div class="w-full max-w-[100vw] mx-auto min-h-[100vh] px-[3vw] md:px-[8vw]  lg:px-[10vw]  grid grid-cols-1 sm:grid-cols-2 justify-center items-center bg-[#ae68d4] ">
+
+    <!-- Left Side -->
+
+    <div class=" min-h-[100vh] sm:h-full w-full LeftSide bg-cover bg-center object-center bg-no-repeat flex flex-col justify-end pb-5  items-center  gap-2 ">
+
+    <h1 class="text-2xl font-bold  text-black "> Welcome To Our Store  </h1>
+    <p class="text-sm  text-black font-bold  "> Top 10 Online Store In World </p>
+ 
+    </div>
+
+    <!--Right SIde-->
+
+    <div class=" h-full w-full  flex flex-col   gap-5 bg-[#ae68d4] p-5 ">
+   <div class="min-h-[10vh] w-full flex justify-center items-center ">
+ <h1 class="text-2xl font-bold "> SignUp </h1>
+   </div>
+
+
+  <!-- ✅ Redirect if user is already registered (logged in automatically) -->
+  {% if customer %}
+    {% comment %} <script>
+      window.location.href = "{{ routes.account_login_url }}";
+    </script> {% endcomment %}
+  {% endif %}
+
+
+   <div class="min-h-[60vh] w-full  flex flex-col  ">
+   {% form 'create_customer' %}
+ <p class="text-sm text-red-700">   {{ form.errors | default_errors }} </p>
+
+<div class="flex flex-col gap-5">
+  <input type="text" name="customer[first_name]" placeholder="First Name" class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+  <input type="text" name="customer[last_name]" placeholder="Last Name" class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+  <input type="email" name="customer[email]" placeholder="Email" class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+  <input type="password" name="customer[password]" placeholder="Password" class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+  <input type="date" name="customer[metafields][custom][dob]"  class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+  <input type="text" name="customer[metafields][custom][address]" placeholder="Address..." class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+
+  
+  <button type="submit" class="input w-full outline-none border border-black p-2  text-white bg-black rounded-md " > SignUp </button>
+   
+
+
+</div>
+{% endform %}
+  <div class="w-full flex justify-center items-center mt-2 ">
+    <h1 class="text-white text-sm"> Already  have an account ? <a href="{{ routes.account_login_url }}" class="text-black font-bold ">LogIn </a>  </h1>
+    </div>
+
+    </div>
+    
+
+  </div>
+
+
+
+
+
+
+
+<!----------------   Register Section Finish ------------------>
+</div>
+
+
+
+
+<!-- Schema ------------->
+
+{% schema %}
+{
+"name": "Registation Section",
+"settings": [
+{
+
+"type": "image_picker",
+"id": "Image",
+"label": "Image"
+}
+
+
+]
+
+
+}
+
+{% endschema %}

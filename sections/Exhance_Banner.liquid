@@ -1,0 +1,89 @@
+
+<div class="w-full max-w-[100vw] min-h-[100vh]  mx-auto px-[3vw] md:px-[8vw] lg:px-[10vw] flex justify-center items-center    ">
+<!-- SubDiv Start  -->
+<div class="min-h-[90vh] lg:min-h-[80vh] min-w-[80vw] border border-black  grid grid-cols-1  lg:grid-cols-2  bg-black my-auto lg:my-0 rounded-md" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">
+<!-- Sub > FIrst -->
+<div class="w-full h-full   flex flex-col gap-8 justify-center  items-start pl-4 lg:pl-8 pt-5 lg:pt-0 ">
+
+    <h1 class="font-bold text-green-600">  Categories </h1>
+    <h1 class=" text-4xl lg:text-6xl font-bold text-white "> Enhance Your Music Experience </h1>
+    <!-- Rounded Ball Start  -->
+    <div class="min-h-[12vh] w-full  grid grid-cols-5 justify-cente items-center "> 
+
+    <div class="border border-white h-[70px] w-[70px] rounded-full bg-white shadow-md flex flex-col justify-center items-center "> 
+        <h1 class="font-bold ">  23</h1>
+        <p class="text-sm">Hours </p>
+    </div>
+ 
+    <div class="border border-white h-[70px] w-[70px] rounded-full bg-white shadow-md flex flex-col justify-center items-center "> 
+        <h1 class="font-bold ">  5</h1>
+        <p class="text-sm">Day </p>
+    </div>
+     
+    <div class="border border-white h-[70px] w-[70px] rounded-full bg-white shadow-md flex flex-col justify-center items-center "> 
+        <h1 class="font-bold ">  59</h1>
+        <p class="text-sm">Minutes </p>
+    </div>
+        
+    <div class="border border-white h-[70px]  w-[70px] rounded-full bg-white shadow-md flex flex-col justify-center items-center "> 
+        <h1 class="font-bold ">  35</h1>
+        <p class="text-sm">Seconds </p>
+    </div>
+<!-- This last Div are not use  -->
+     <div> </div>        
+
+
+    </div>
+
+    <!-- Rounded Ball Finish -->
+    <button class="px-6 lg:px-8 py-2 lg:py-3 bg-green-500 text-white font-bold  rounded-sm"> Buy Now  </button>
+</div>
+
+<!-- Sub > Second --> 
+
+<div class="w-full h-full  flex justify-center items-center  ">
+    
+    <!-- Image Div -->
+  <div class="w-full aspect-video flex justify-center items-center">
+    <img src="{{ section.settings.Image_Piker | image_url }}" alt=""
+         class="w-full h-full object-contain  lg:object-cover" />
+  </div>
+<!-- Image Div Finish -->
+
+</div>
+
+
+</div>
+<!-- SubDiv Finish  -->
+
+</div>
+
+
+{% schema %}
+
+{
+"name": "Exhance Banner ",
+"settings": [
+{
+
+    "type": "image_picker",
+    "id":"Image_Piker",
+    "label": "Exhance Banner "
+
+
+}
+
+
+
+
+]
+
+
+
+}
+
+
+{% endschema %}
+
+

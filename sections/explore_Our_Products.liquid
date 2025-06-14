@@ -1,0 +1,116 @@
+<div class=" w-full max-w-[100vw] min-h-[100vh] mx-auto px-[3vw] md:px-[8vw] lg:px-[10vw]  flex flex-col gap-5 justify-center items-center ">
+<!-- First Div -->
+<div class="w-full min-h-[20vh]  grid grid-cols-3  lg:grid-cols-2  ">
+
+    <div class="w-full h-full flex flex-col justify-center  items-start col-span-2 lg:col-span-1 ">
+        <!--Product  First > first  -->
+        <div class="w-full min-h-[8vh] flex flex-row gap-5 justify-start items-center "> 
+          <span class="h-[6vh] lg:h-[7vh] w-[2vw] bg-red-600 rounded-md"> </span>
+          <h1 class="text-red-600  font-bold">  Categories  </h1>
+        
+        </div> 
+
+
+        
+        <!-- Products First > Second -->
+        <div> 
+
+         <h1 class="text-2xl lg:text-3xl font-bold ">Browse By Category   </h1>
+         </div>
+
+
+    </div>
+
+    <!-- First Second -->
+
+    <div class="h-full w-full flex justify-center py-3 lg:py-0  lg:justify-end items-center">
+    
+<div class="flex flex-row gap-5"> <span class="bg-slate-200 rounded-full p-2 " id="PrevButton">{% render 'Left_Icons'  %} </span> <span class="bg-slate-200 rounded-full p-2 " id="NextButton">  {% render 'RIght_icons' | asset_url %} </span> </div>
+
+</div>
+
+    
+
+
+<!-- First Div Finish -->
+</div>
+
+
+
+<!-- Product Second Div -->
+
+<div class="min-h-[60vh] w-full  grid grid-cols-2 lg:grid-cols-4 justify-center items-center gap-5  p-5 ">
+
+
+    {% for product in section.settings.Select_Eight_Product limit: 8  %}
+        {% assign review = product.metafields.custom.review %}
+{% assign count = product.metafields.custom.reviewnumber %}
+
+{% render 'Cart_Design' | asset_url , product:product,review:review,count:assign %}
+
+
+{% endfor %}
+
+</div>
+
+
+
+<!-- Third Div -->
+
+<div class=" w-full min-h-[10vh] flex justify-center items-center ">
+<a href="{{ section.settings.Button_Url  }}">  
+    <button class="font-bold text-white pt-3 pb-3 pl-6 pr-6 bg-red-600 rounded-md">  View All Products </button>
+
+</a>
+    </div>
+
+
+
+
+
+
+
+
+
+<!--- End -->  
+    </div>
+
+
+
+
+    {% schema %}
+{
+"name": "Explore Oure Products " ,
+"settings": [
+
+{
+"type":"url",
+"id": "Button_Url",
+"label": "Button Url "
+
+
+},
+{
+
+"type": "product_list",
+"id": "Select_Eight_Product",
+"label": "Explore Products"
+
+}
+
+
+
+]
+
+
+
+
+}
+
+    {% endschema %}
+
+
+
+
+
+

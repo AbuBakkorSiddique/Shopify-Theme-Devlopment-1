@@ -1,0 +1,170 @@
+<div class="w-full  max-w-[100vw] mx-auto min-h-[80vh] px-[3vw] md:px-[8vw] lg:px-[10vw] flex flex-col justify-center items-center gap-5 ">
+
+<!-- FIrst Div -->
+<div class="w-full min-h-[25vh]  grid grid-cols-3  lg:grid-cols-2">
+<!--Category Intro Section -->
+<!--Category Left -->
+    <div class="w-full h-full flex flex-col justify-center  items-start col-span-2 lg:col-span-1 ">
+        <!--Category First > first  -->
+        <div class="w-full min-h-[8vh] flex flex-row gap-5 justify-start items-center "> 
+          <span class="h-[6vh] lg:h-[7vh] w-[2vw] bg-red-600 rounded-md"> </span>
+          <h1 class="text-red-600  font-bold">  Categories  </h1>
+        
+        </div> 
+
+
+        
+        <!-- Category First > Second -->
+        <div> 
+
+         <h1 class="text-2xl lg:text-3xl font-bold ">Browse By Category   </h1>
+         </div>
+
+
+    </div>
+
+    <!--Category Right  -->
+
+<div class="h-full w-full flex  gap-5 lg:gap-0 py-5 lg:py-0  justify-end items-center col-span-1 ">
+    
+<div class="flex flex-row gap-5"> <span class="bg-slate-200 rounded-full p-2 " id="PrevButton">{% render 'Left_Icons' | asset_url %} </span> <span class="bg-slate-200 rounded-full p-2 " id="NextButton">  {% render 'RIght_icons' | asset_url %} </span> </div>
+
+</div>
+</div>
+
+
+
+
+<!-- Second Div -->
+
+<div class="min-h-[25vh] w-full  justify-center items-center grid grid-cols-3  lg:grid-cols-6 gap-5 ">
+
+
+<!-- Cart Main -->
+
+{% for collection in collections  %}
+
+
+<a href="{{ collection.url }}">
+<div class="min-h-[25vh] min-w-[12vw]  flex flex-col justify-center items-center rounded-lg shadow-sm hover:bg-red-600 hover:text-white  bg-slate-100 transform transition duration-300  product-card"  data-index="{{ forloop.index0 }}"  >
+
+    <div class="min-h-[15vh] w-full  flex justify-center items-center ">
+        
+   <img src="{{ collection.featured_image | image_url }}" alt="{{ collection.title }}" class="h-[50px] w-[50px] object-cover">
+    </div>
+    <div class="min-h-[10vh] w-full  flex justify-center  items-center "> 
+        <h1 class="font-bold"> {{ collection.title }} </h1>
+
+</div>
+
+</div>
+
+  </a>
+
+
+    
+
+
+    {% endfor %}
+
+
+
+
+
+
+
+<!-- cart Main FInish -->
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+{% schema %}
+
+{
+"name": "Category Section " ,
+"settings": []
+
+
+
+}
+
+
+{% endschema %}
+
+
+
+
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".product-card");
+  const PrevButton = document.getElementById("PrevButton");
+  const NextButton = document.getElementById("NextButton");
+
+  let currentPage = 0;
+  let perPage = getPerPage();
+
+  function getPerPage() {
+    return window.innerWidth < 768 ? 3 : 6;
+  }
+
+  function renderProducts() {
+    perPage = getPerPage();
+    const start = currentPage * perPage;
+    const end = start + perPage;
+
+    cards.forEach((card, index) => {
+      if (index >= start && index < end) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+
+    PrevButton.disabled = currentPage === 0;
+    NextButton.disabled = (currentPage + 1) * perPage >= cards.length;
+  }
+
+  function PrevFunction() {
+    if (currentPage > 0) {
+      currentPage--;
+      renderProducts();
+    }
+  }
+
+  function NextFunction() {
+    if ((currentPage + 1) * perPage < cards.length) {
+      currentPage++;
+      renderProducts();
+    }
+  }
+
+  window.addEventListener("resize", () => {
+    const newPerPage = getPerPage();
+    if (newPerPage !== perPage) {
+      currentPage = 0;
+      renderProducts();
+    }
+  });
+
+  PrevButton.addEventListener("click", PrevFunction);
+  NextButton.addEventListener("click", NextFunction);
+
+  renderProducts();
+});
+
+
+</script>

@@ -1,0 +1,53 @@
+<!-- Cart Page -->
+<div class="w-full max-w-[100vw] mx-auto px-[3vw] md:px-[8vw] lg:px-[10vw] min-h-[100vh] py-10">
+  <h1 class="text-3xl font-bold mb-6">Your Cart</h1>
+
+  {% if cart.item_count > 0 %}
+    <form action="/cart" method="post" novalidate>
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b">
+            <th class="text-left p-2">Product</th>
+            <th class="text-center p-2">Price</th>
+            <th class="text-center p-2">Quantity</th>
+            <th class="text-center p-2">Total</th>
+            <th class="text-center p-2">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in cart.items %}
+            <tr class="border-b">
+              <td class="flex items-center gap-4 p-2">
+                <img src="{{ item.image | image_url}}" alt="{{ item.product.title }}" class="w-16 h-16 object-cover">
+                <span class="text-xs lg:text-sm">{{ item.product.title }}</span>
+              </td> 
+              <td class="text-center p-2">{{ item.price | money }}</td>
+              <td class="text-center p-2">
+                <input type="number" name="updates[]" value="{{ item.quantity }}" min="1" class="border w-16 text-center">
+              </td>
+              <td class="text-center p-2">{{ item.line_price | money }}</td>
+              <td class="text-center p-2">
+                <a href="{{ item.url_to_remove }}" class="text-red-600 font-bold hover:underline">Remove</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class="flex justify-between items-center mt-6">
+        <div class="text-xl font-bold">Subtotal: {{ cart.total_price | money }}</div>
+        <div class="flex gap-4">
+          <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+            Update Cart
+          </button>
+          <a href="/checkout" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+            Proceed to Checkout
+          </a>
+        </div>
+      </div>
+    </form>
+  {% else %}
+    <div class="text-xl">Your cart is currently empty.</div>
+    <a href="/collections/all" class="text-blue-600 hover:underline mt-4 inline-block">Continue Shopping</a>
+  {% endif %}
+</div>

@@ -1,0 +1,12 @@
+{
+"name":"Wish List Page ",
+"sections":{
+    "WishListTemplate":{
+        "type":"Wishlish_Template"
+    }
+},
+"order":["WishListTemplate"]
+
+
+
+}

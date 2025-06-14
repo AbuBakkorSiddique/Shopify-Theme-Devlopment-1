@@ -1,0 +1,14 @@
+{% if product.description != blank %}
+
+<div class="w-full max-w-[100vw] mx-auto min-h-[60vh] px-[3vw] md:px-[8vw] lg:px-[10vw]  flex flex-col gap-5 justify-center items-center ">
+<div class="w-full min-h-[10vh] flex justify-center items-center ">
+    <h1 class="text-xl font-bold "> Product Description  </h1> 
+
+</div>
+<div class="w-full min-h-[40vh] p-5  ">
+{{ product.description | raw}}
+    </div>
+
+</div>
+
+{% endif %}

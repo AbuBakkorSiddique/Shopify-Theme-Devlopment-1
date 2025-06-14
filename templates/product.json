@@ -1,0 +1,17 @@
+{
+"name":"Product Page ",
+"sections":{
+"productSection":{
+    "type":"product_section"
+},
+"ProductDescription":{
+    "type":"Product_description"
+},
+
+
+
+},
+"order":["productSection","ProductDescription"]
+
+
+}

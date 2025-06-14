@@ -1,0 +1,14 @@
+{
+
+"name":"cart Page ",
+"sections":{
+"cartSection":{
+    "type":"cart_section"
+}
+
+},
+"order":["cartSection"]
+
+
+
+}

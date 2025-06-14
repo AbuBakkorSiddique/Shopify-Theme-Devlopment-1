@@ -1,0 +1,23 @@
+[
+    
+    {
+"name": "Theme Settings",
+"settings": [
+ {
+    "type": "text",
+    "id": "name",
+    "label": "Brand Name ",
+    "default":"NextGadget24"
+ },
+ {
+    "type": "image_picker",
+    "id": "logo",
+    "label": "Brand Logo ",
+    "info": "Use 140px * 70px image"
+
+ }
+
+]
+
+
+}]

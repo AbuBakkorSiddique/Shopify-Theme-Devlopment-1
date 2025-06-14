@@ -1,0 +1,13 @@
+{
+
+"name":"Register Page",
+"sections":{
+"Register_section":{
+    "type":"Register_section"
+}
+
+},
+"order":["Register_section"]
+
+
+}

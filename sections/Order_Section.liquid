@@ -1,0 +1,106 @@
+<div class="w-full max-w-[100vw] min-h-[120vh] mx-auto flex flex-col justify-center items-center bg-white   px-[3vw] md:px-[8vw] lg:px-[10vw] ">
+  <!-- Sub DIv Start -->
+  <div class="w-full min-h-[100vh]  my-5 px-5 py-5 bg-slate-100 rounded-md shadow-md flex  flex-col gap-5">
+    <!-- Heading Area -->
+    <div class="w-full min-h-[10vh] ">
+      <h1 class="text-5xl font-bold">INVOICE</h1>
+    </div>
+
+    <!-- 2nd DIv -->
+
+    <div class="w-full min-h-[30vh]  flex flex-col   ">
+      <p><span class="font-bold">Invoice no: </span> {{ order.name }}</p>
+      <p><span class="font-bold"> Customer Name :</span> {{ customer.name }}</p>
+      <p>
+        <span class="font-bold"> Address : </span>
+        {% if customer_address %}{{ customer_address }} {% else %}Bangladesh{% endif %}
+      </p>
+      <p><span class="font-bold"> Shiping Address : </span> {{ order.shipping_address.address1 }}</p>
+      <p>
+        <span class="font-bold"> Phone : </span>
+        {% if order.phone %} {{ order.phone }} {% else %}+8802536956{% endif %}
+      </p>
+
+      <p><span class="font-bold"> Date : </span> {{ order.created_at | date }}</p>
+    </div>
+
+    <!-- 3rd DIv Start -->
+    <div class="w-full min-h-[40vh]  flex flex-col  ">
+      <!-- Heading Area -->
+      <div class="w-full  mnin-h-[10vh]  grid grid-cols-5  ">
+        <div class="border-black border-b-1 h-full w-full flex justify-center  items-center  col-span-2">
+          <p class="font-black">Item</p>
+        </div>
+        <div class="border-black border-b-1 h-full w-full flex justify-center  items-center ">
+          <p class="font-black">Quantity</p>
+        </div>
+
+        <div class="border-black border-b-1 h-full w-full flex justify-center  items-center ">
+          <p class="font-black">Unit Price</p>
+        </div>
+
+        <div class="border-black border-b-1 h-full w-full flex justify-center  items-center ">
+          <p class="font-black">Price</p>
+        </div>
+      </div>
+      <!-- Looping Div -->
+
+      {% for line_items in order.line_items %}
+        <div class="w-full  mnin-h-[10vh]  grid grid-cols-5  ">
+          <div class="p-2 border-black border-b-1 h-full w-full flex justify-center  items-center  col-span-2">
+            <p class="text-sm ">{{ line_items.title }}</p>
+          </div>
+          <div class="p-2 border-black border-b-1 h-full w-full flex justify-center  items-center ">
+            <p class="text-sm ">{{ line_items.quantity }}</p>
+          </div>
+
+          <div class="p-2 border-black border-b-1 h-full w-full flex justify-center  items-center ">
+            <p class="text-sm">{{ line_items.price | money }}</p>
+          </div>
+
+          <div class="p-2 border-black border-b-1 h-full w-full flex justify-center  items-center ">
+            <p class="text-sm">{{ line_items.final_line_price | money }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- FInal Ammount Div -->
+
+    <div class="flex  flex-col ">
+      <div class="w-full min-h-[5vh]  grid grid-cols-5  ">
+        <div class="h-full w-full col-span-2">
+          {% for shipping_line in order.shipping_lines %}
+            {{ shipping_line.title -}}
+            {%- unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </div>
+        <div class="h-full w-full "></div>
+        <div class="h-full w-full text-sm lg:text-md font-bold flex justify-start items-center  ">Sub Total</div>
+        <div class="h-full w-full  flex justify-start items-center ">{{ order.subtotal_price | money }}</div>
+      </div>
+
+      <div class="w-full min-h-[5vh]  grid grid-cols-5  ">
+        <div class="h-full w-full col-span-2"></div>
+        <div class="h-full w-full "></div>
+        <div class="h-full w-full text-sm  lg:text-md font-bold flex justify-start items-center  ">Shipping Cost</div>
+        <div class="h-full w-full  flex justify-start items-center ">{{ order.shipping_price | money }}</div>
+      </div>
+
+      <div class="w-full min-h-[5vh]  grid grid-cols-5  ">
+        <div class="h-full w-full col-span-2"></div>
+        <div class="h-full w-full "></div>
+        <div class="h-full w-full  text-sm lg:text-md font-bold flex justify-start items-center  ">Tax</div>
+        <div class="h-full w-full  flex justify-start items-center ">{{ order.tax_price | money }}</div>
+      </div>
+
+      <div class="w-full min-h-[5vh]  grid grid-cols-5  ">
+        <div class="h-full w-full col-span-2"></div>
+        <div class="h-full w-full "></div>
+        <div class="h-full w-full text-sm  lg:text-md font-bold flex justify-start items-center  ">Total</div>
+        <div class="h-full w-full  flex justify-start items-center ">{{ order.total_price | money }}</div>
+      </div>
+    </div>
+
+    <!-- Sub DIv Finish -->
+  </div>
+</div>

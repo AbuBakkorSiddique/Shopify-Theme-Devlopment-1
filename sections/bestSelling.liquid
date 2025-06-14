@@ -1,0 +1,101 @@
+<div class="w-full max-w-[100vw] min-h-[100vh]  mx-auto flex flex-col justify-center items-center px-[3vw] md:px-[8vw] lg:px-[10vw]  gap-5  "> 
+
+<!-- FIrst Div -->
+<div class="w-full min-h-[25vh]  grid grid-cols-3 lg:grid-cols-2 ">
+<!--Category Intro Section -->
+<!--Category Left -->
+    <div class="w-full h-full flex flex-col justify-center  items-start  col-span-2 lg:col-span-1">
+        <!--Category First > first  -->
+        <div class="w-full min-h-[8vh] flex flex-row gap-5 justify-start items-center "> 
+          <span class="h-[6vh] lg:h-[7vh] w-[2vw] bg-red-600 rounded-md"> </span>
+          <h1 class="text-red-600  font-bold">  This Month  </h1>
+        
+        </div> 
+
+
+        
+        <!-- Category First > Second -->
+        <div> 
+
+         <h1 class="text-2xl lg:text-3xl font-bold ">Best Selling Products  </h1>
+         </div>
+
+
+    </div>
+
+    <!--Category Right  -->
+
+<div class="h-full w-full flex  gap-5 lg:gap-0 py-5 lg:py-0  justify-end items-center">
+    
+<a href="{{ section.settings.Best_selleing_Product_Button_Link }}"> 
+<button class="font-bold text-white bg-red-600 pt-3 pb-3 pl-5 lg:pl-8 pr-5 lg:pr-8 rounded-md ">{{ section.settings.Best_selleing_Product_Button }} </button>
+
+</a>
+</div>
+</div>
+
+
+
+
+<!-- Second Div -->
+<div class="w-full min-h-[60vh] grid grid-cols-2 lg:grid-cols-4 gap-5 pb-8 lg:pb-0 "> 
+
+{% for product in section.settings.Best_Selling_Product_List limit: 4 %}
+ {% assign review = product.metafields.custom.review %}
+{% assign count = product.metafields.custom.reviewnumber %}
+
+  
+
+  {% render 'Cart_Design' ,product:product,review:review,count:count  %}      
+
+
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+<!-- End Div -->
+</div>
+
+{% schema %}
+
+{
+"name": "Best Selling Product",
+"settings": [
+
+    {
+    
+    "type": "text",
+    "id": "Best_selleing_Product_Button",
+    "label": "Best Select Product ",
+    "default":"View All"
+    
+    
+    },
+        {
+    
+    "type": "url",
+    "id": "Best_selleing_Product_Button_Link",
+    "label": "Best Select Product "
+    
+    
+    },
+    {
+    "type": "product_list",
+    "id": "Best_Selling_Product_List",
+     "label": "Best Selling Product "
+    
+    
+    }
+]
+
+
+}
+
+{% endschema %}

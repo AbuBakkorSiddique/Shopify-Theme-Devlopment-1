@@ -1,0 +1,17 @@
+{
+
+"name":"About Us ",
+"sections":{
+    "Image_with_text":{
+        "type":"Image_with_Text.liquid"
+    },
+    "HighlightSection":{
+        "type":"Hilight_section"
+    },
+    "CarosuleTeam":{
+        "type":"Carosule_Team"
+    }
+},
+"order":["Image_with_text","HighlightSection","CarosuleTeam"]
+
+}

@@ -1,0 +1,178 @@
+<style>
+.LeftSide{
+background-image:url("{{ section.settings.Image_One | image_url }}");
+
+
+}
+
+.DivTwo{
+background-image:url("{{ section.settings.Image_Two | image_url }}");
+background-size:cover;
+background-position:center ;
+background-repeat:no-repeat;
+
+}
+
+
+.DivThree{
+background-image:url("{{ section.settings.Image_Three | image_url }}");
+background-size:cover;
+background-position:center ;
+background-repeat:no-repeat;
+
+}
+
+
+.DivFour{
+background-image:url("{{ section.settings.Image_Four | image_url }}");
+background-size:cover;
+background-position:center ;
+background-repeat:no-repeat;
+
+}
+
+  </style>
+
+
+
+<div class="w-full mx-auto max-w-[100vw] min-h-[150vh] sm:min-h-[120vh] lg:min-h-[100vh]    px-[3vw] md:px-[8vw] lg:px-[10vw] flex justify-center items-center  ">
+<!-- Sub Div -->
+<div class="min-h-[90vh] min-w-[80vw]   grid grid-cols-1 md:grid-cols-2  gap-5">
+<!-- Left Side Div -->
+<div class=" min-h-[80vh] lg:h-full w-full rounded-md LeftSide relative bg-no-repeat bg-cover   bg-center overflow-hidden group  "> 
+
+<div class=" min-w-[38vw]  min-h-[20vh] flex flex-col   justify-center  items-start absolute bottom-0 pb-8 pl-8 left-0 "> 
+
+
+ 
+<h1 class="font-bold text-lg text-white ">  PlayStation 5</h1>
+
+<div class="flex flex-col pt-3 pb-3 ">
+<p class="text-white text-lg">Black and White version of the PS5   </p>
+<p class="text-white text-lg">coming out on sale. </p>
+  </div>
+
+<a href="">
+<button class="text-white font-bold border border-white px-6 py-2 group-hover:bg-white  group-hover:text-black  scale-x-0 z-0 origin-left transition-transform inset-0 group-hover:scale-x-100  duration-300 group-hover:border-black  ">Shop Now </button>
+  </a>
+</div>
+
+
+</div>
+
+
+<!-- Right Side Div -->
+<div class=" w-full  min-h-[80vh] lg:h-full  grid grid-flows-col grid-rows-2 gap-5"> 
+
+<div class=" rounded-md DivTwo  relative group ">
+
+<div class=" min-w-[38vw]  min-h-[18vh] flex flex-col    justify-center  items-start absolute bottom-0 pb-8 pl-8 left-0 "> 
+
+<h1 class="font-bold text-lg text-white ">  Women’s Collections</h1>
+
+<div class="flex flex-col pt-3 pb-3">
+  <p class="text-white text-lg">Featured woman collections that  </p>
+<p class="text-white text-lg">give you another vibe. </p>
+  </div>
+<a href="">
+<button class="text-white font-bold border border-white px-6 py-2 group-hover:bg-white  group-hover:text-black transition-transform scale-x-0 group-hover:scale-x-100 origin-left z-0 inset-0  duration-300 group-hover:border-black  ">Shop Now </button>
+  </a>
+</div>
+  
+
+
+</div>
+<!-- Semi Grid -->
+<div class=" grid grid-cols-2 gap-5"> 
+    
+<!-- Small Div -->
+<div class=" rounded-md  DivThree relative group   "> 
+
+<div class="absolute flex flex-col min-w-[18vw] min-h-[18vh] justify-center gap-3 items-start bottom-0 left-0 pb-5 pl-5 ">
+
+  <h1 class="font-bold text-white "> Speakers </h1>
+  <p class="text-white text-sm">Amazon wireless speakers </p>
+<button class=" border border-white pt-2 pb-2 pl-5 pr-5 group-hover:bg-white group-hover:border-black font-bold transition-transform z-0 inset-0 scale-x-0 group-hover:scale-x-100 duration-300 origin-left "> Shop Now </button>
+
+
+  </div>
+
+
+</div>
+<div class=" rounded-md  DivFour relative group"> 
+
+<div class="absolute flex flex-col min-w-[18vw] min-h-[18vh] justify-center gap-3 items-start bottom-0 left-0 pb-5 pl-5 ">
+
+  <h1 class="font-bold text-white "> Speakers </h1>
+  <p class="text-white text-sm">Amazon wireless speakers </p>
+<button class=" border border-white pt-2 pb-2 pl-5 pr-5 group-hover:bg-white group-hover:border-black font-bold transition-transform z-0 inset-0 scale-x-0 group-hover:scale-x-100 duration-300 origin-left "> Shop Now </button>
+
+
+  </div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+    <!-- Sub Div Finished -->
+</div>
+
+    </div>
+
+
+    {% schema %}
+
+    {
+    
+    "name": "Bendo Grid ",
+    "settings": [
+  {
+
+"type":"image_picker",
+"id": "Image_One",
+"label": "Image One "
+
+},
+  {
+
+"type":"image_picker",
+"id": "Image_Two",
+"label": "Image Two "
+
+},
+  {
+
+"type":"image_picker",
+"id": "Image_Three",
+"label": "Image Three "
+
+},
+  {
+
+"type":"image_picker",
+"id": "Image_Four",
+"label": "Image Four "
+ 
+}
+
+
+
+    ]
+    
+    
+    
+    
+    
+    }
+
+    {% endschema %}

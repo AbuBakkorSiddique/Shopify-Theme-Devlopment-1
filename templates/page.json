@@ -1,0 +1,11 @@
+{
+
+"name":"Contact Page ",
+"sections":{
+ "ContactPageLayout":{
+       "type":"MainPage_section"
+ }
+},
+"order":["ContactPageLayout"]
+
+}

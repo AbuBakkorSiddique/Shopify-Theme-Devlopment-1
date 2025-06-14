@@ -1,0 +1,292 @@
+
+
+
+<div class=" w-full max-w-[100vw]  mx-auto min-h-[100vh]  px-[3vw] lg:px-[10vw] md:px-[8vw] flex flex-col ">
+
+    <!-- first Div -->
+<div class="grid grid-cols-1 gap-5 lg:gap-0 py-5 lg:grid-cols-2 justify-between items-center w-full min-h-[18vh]"> 
+
+<!-- First One ---->
+<div class="flex flex-col ">
+    <!-- first one > one -->
+    <div class="flex flex-row gap-3 justify-cener items-center">
+   <span class="h-[7vh] w-[2vw] bg-red-600 rounded-md "> </span> <h1 class="text-red-600 font-bold">Today’s </h1>
+    </div>
+ <!-- FIrst one > Two -->
+ <div class=" w-full h-[8vh] flex flex-row justify-between items-center gap-10"> 
+<!-- First one > Two > one -->
+<div> 
+
+<h1 class="text-2xl font-bold"> Flash Sales  </h1>
+
+</div>
+
+<!-- First one > Two > Two -->
+<div class="flex justify-center items-end gap-4  w-fit mx-auto " >
+  <div class="text-center">
+    <div class="text-sm text-gray-600">Days</div>
+    <div id="days" class="text-2xl font-bold text-black">00</div>
+  </div>
+  <div class="text-2xl font-bold text-black">:</div>
+  <div class="text-center">
+    <div class="text-sm text-gray-600">Hours</div>
+    <div id="hours" class="text-2xl font-bold text-black">00</div>
+  </div>
+  <div class="text-2xl font-bold text-black">:</div>
+  <div class="text-center">
+    <div class="text-sm text-gray-600">Minutes</div>
+    <div id="minutes" class="text-2xl font-bold text-black">00</div>
+  </div>
+  <div class="text-2xl font-bold text-black">:</div>
+  <div class="text-center">
+    <div class="text-sm text-gray-600">Seconds</div>
+    <div id="seconds" class="text-2xl font-bold text-black">00</div>
+  </div>
+</div>
+
+
+
+ </div>
+
+</div>
+
+
+
+<!-- First Two -->
+<div class="h-full w-full flex justify-center py-3 lg:py-0  lg:justify-end items-center">
+    
+<div class="flex flex-row gap-5"> <span class="bg-slate-200 rounded-full p-2 " id="LeftSide">{% render 'Left_Icons' | asset_url %} </span> <span class="bg-slate-200 rounded-full p-2 " id="RIghtSide">  {% render 'RIght_icons' | asset_url %} </span> </div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- Second DIv -->
+
+<div class="w-full lg:min-h-[65vh] grid grid-cols-2 lg:grid-cols-4 gap-5 p-5 justify-between items-center lg:pt-[6vh]  " data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" >
+   
+{% for product in section.settings.Flash_sale_product  %}
+{% assign review = product.metafields.custom.review %}
+{% assign count = product.metafields.custom.reviewnumber %}
+ <a href="{{ product.url }}"> 
+    
+<!-- Cart Main -->   
+  <div class="min-w-[18vw] min-h-[58vh]  flex flex-col rounded-md shadow-sm group Carts " data-index="{{ forloop.index0 }}" >
+    <!-- Cart Image -->
+    <div class="w-full h-[42vh] relative "> 
+        <img src="{{ product.featured_image | image_url }}" alt="{{ product.title }}" class="w-full h-full object-cover " />
+
+    <!-- wish LIst -->   
+    
+    <span class="bg-slate-200 absolute top-2 right-2 z-10 opacity-0 group-hover:opacity-100 transform translate duration-300 p-3 rounded-full  hover:bg-red-600 hover:text-white "> 
+
+  {% render 'wishlist_section', productID:product.id %} 
+    </span>
+
+
+    
+   <!-- Add To Cart -->
+   <div class="absolute w-full bottom-0  opacity-0 group-hover:opacity-100 z-10 transform transition duration-300"> 
+   <button class="w-full bg-black text-white p-2 font-bold ">  Add To Cart</button>
+
+   </div>
+
+        </div>
+
+
+        <!-- Cart Body -->
+        <div class="h-full w-full flex flex-col justify-around pl-2 items-start" >
+      <h1 class="font-bold pt-2">{{ product.title }}</h1>
+     <div class=" flex flex-row gap-5"> <span>$120 </span> <span>$160 </span></div>
+     <div class="flex flex-row gap-5 justify-start items-center"> 
+       <!-- Review Section --> 
+     <span class="flex flex-row space-x-1">
+       {% for i in (1..5) %}
+      {% if i <= review %}
+        <svg class="w-5 h-5 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.564-.955L10 0l2.948 5.955 6.564.955-4.756 4.635 1.122 6.545z"/></svg>
+      {% else %}
+        <svg class="w-5 h-5 text-gray-300 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.564-.955L10 0l2.948 5.955 6.564.955-4.756 4.635 1.122 6.545z"/></svg>
+      {% endif %}
+    {% endfor %}
+    
+    </span>
+     <!-- Review Person -->
+     <span> ({{  count  }}) </span> 
+    
+    </div>
+        </div>
+
+    
+</div>  
+
+</a>
+
+
+    {% endfor %}
+
+
+
+</div>
+
+
+
+<!-- Thirt Div -->
+
+<div class=" w-full min-h-[14vh]  flex justify-center items-center  "> 
+<a href="{{ section.settings.Link }}"> 
+  <button class="min-w-[18vw] pt-3 pb-3 pl-5 pr-5 lg:pt-0 lg:pb-0 lg:pl-0 lg:pr-0  min-h-[10vh] bg-red-600 text-white lg:font-bold rounded-md">     View All Products  </button>
+
+
+</a> 
+
+
+</div>
+
+
+
+<!------ Ending ----------------------------------->
+    </div>
+
+
+
+ {% schema %}
+
+ {
+
+"name": "Flash Slae",
+"settings": [
+
+{
+"type": "product_list",
+"id": "Flash_sale_product",
+"label": "Flash Sale Product "
+
+},
+{
+
+"type": "url",
+"id": "Link",
+"label": "Url",
+"default":"/"
+
+}
+
+
+
+]
+
+
+
+
+}
+
+
+ {% endschema %}
+
+
+
+
+
+ <script>
+  // Set target date (you can change it as needed)
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 3); // 3 days later
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      document.getElementById("days").textContent = "00";
+      document.getElementById("hours").textContent = "00";
+      document.getElementById("minutes").textContent = "00";
+      document.getElementById("seconds").textContent = "00";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+
+
+
+const LeftSide = document.getElementById("LeftSide");
+const RightSide = document.getElementById("RIghtSide");
+const Carts = document.querySelectorAll(".Carts");
+
+let currentPage = 0;
+let perPage = getPerPage();
+
+function getPerPage() {
+  return window.innerWidth < 768 ? 2 : 4;
+}
+
+function RenderCarts() {
+  perPage = getPerPage();
+
+  const start = currentPage * perPage;
+  const end = start + perPage;
+
+  Carts.forEach((cart, index) => {
+    if (index >= start && index < end) {
+      cart.classList.remove("hidden");
+    } else {
+      cart.classList.add("hidden");
+    }
+  });
+
+  LeftSide.disabled = currentPage === 0;
+  RightSide.disabled = end >= Carts.length;
+}
+
+function PrevFunction() {
+  if (currentPage > 0) {
+    currentPage--;
+    RenderCarts();
+  }
+}
+
+function NextFunction() {
+  if ((currentPage + 1) * perPage <= Carts.length) {
+    currentPage++;
+    RenderCarts();
+  }
+}
+
+window.addEventListener("resize", () => {
+  const newPerPage = getPerPage();
+  if (newPerPage !== perPage) {
+    perPage = newPerPage;
+    currentPage = 0; // reset to first page
+    RenderCarts();
+  }
+});
+
+LeftSide.addEventListener("click", PrevFunction);
+RightSide.addEventListener("click", NextFunction);
+
+// Initial render
+RenderCarts();
+
+
+
+
+</script>

@@ -1,0 +1,10 @@
+{
+
+    "name":"Customer Account",
+    "sections":{
+    "Account_Section":{
+        "type":"account_section"
+    }
+    },
+    "order":["Account_Section"]
+}

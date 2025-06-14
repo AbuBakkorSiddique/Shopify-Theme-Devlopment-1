@@ -1,0 +1,203 @@
+<div class="w-full max-w-[100vw] mx-auto min-h-[100vh] px-[3vw] md:px-[8vw] lg:px-[10vw] flex  flex flex-col gap-5 justify-center items-center ">
+  <!-- First Div Start -->
+  <div class="w-full min-h-[10vh] border-black  border-b-1 flex justify-between items-center px-5  ">
+    <!-- First Div -->
+    <div>
+      <p class="font-bold ">{{ shop.name }}</p>
+    </div>
+
+    <!-- Second Div -->
+    <div>
+      <a href="{{ routes.account_logout_url }}">
+        <button class="px-8 py-1 bg-red-600 text-white font-bold rounded-sm ">Log Out</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- 2 nd  Div -->
+
+  <div class="w-full min-h-[70vh]  grid grid-cols-1 lg:grid-cols-3 rounded-md shadow-md bg-slate-100 px-5 py-5 mb-5 ">
+    <!-- 2nd Div > first -->
+    <div class="h-full w-full  flex flex-col gap-5  ">
+      <!-- Profile icons section -->
+      <div class="w-full min-h-[20vh]   flex flex-col gap-5 ">
+        <span> {% render 'Account_icons' | asset_url %} </span>
+        <div>
+          <h1 class="text-xl font-bold ">
+            {{ customer.first_name }}
+            {{ customer.last_name }}
+          </h1>
+          <p class="text-sm">{{ customer.email }}</p>
+        </div>
+      </div>
+
+      <!-- Button Section -->
+
+      <div class="w-full min-h-[40vh]  flex flex-col gap-4">
+        <h1 class="text-xl font-bold " id="InformationButton">Personal Information</h1>
+        <h1 class="text-xl font-bold " id="BillingButton">Billings & Payments</h1>
+        <h1 class="text-xl font-bold " id="OrdersButton">Order History</h1>
+        <h1 class="text-xl font-bold " id="GiftButton">Gift Cards</h1>
+      </div>
+    </div>
+
+    <!-- 2nd Div > 2nd  Content Area -->
+    <div class="h-full  w-full  col-span-2 flex flex-col gap-5  ">
+      <!-- Heading Area -->
+      <div class="w-full min-h-[20vh]  flex flex-col gap-5 ">
+        <h1 class="text-2xl font-bold ">Personal Information</h1>
+        <p class=" ">
+          Manage your personal information , including phone numbers and email address where you be connected
+        </p>
+      </div>
+
+      <!-- Main Div For information , billiings , order and gift -->
+
+      <div class="w-full min-h-[50vh]  ">
+        <!-- Information -->
+
+        <div class="min-h-[50vh] w-full    grid grid-cols-2 grid-rows-3 gap-2 p-3 lg:p-5" id="InformationDiv">
+          <!-- Name -->
+          <div class="h-full w-full  flex flex-col px-5 py-5 shadow-md rounded-md">
+            <h1 class="text-xl font-bold ">Name</h1>
+            <p class="text-sm">
+              {{ customer.first_name }}
+              {{ customer.last_name }}
+            </p>
+          </div>
+          <!-- Date Of Birth -->
+          <div class="h-full w-full   flex flex-col px-5 py-5 shadow-md rounded-md">
+            <h1 class="text-xl font-bold ">Date of Birth</h1>
+            <p class="text-sm">09 july 1993</p>
+          </div>
+
+          <!-- County Reigon -->
+          <div class="h-full w-full  flex flex-col px-5 py-5 shadow-md rounded-md">
+            <h1 class="text-xl font-bold ">Country Region</h1>
+            <p class="text-sm">thakurgaon sadar , thakurgaon</p>
+          </div>
+
+          <!-- Language -->
+          <div class="h-full w-full  flex flex-col px-5 py-5 shadow-md rounded-md">
+            <h1 class="text-xl font-bold ">Language</h1>
+            <p class="text-sm">English</p>
+          </div>
+
+          <!-- Contact -->
+          <div class="h-full w-full   flex flex-col px-5 py-5 shadow-md rounded-md">
+            <h1 class="text-xl font-bold ">Contactable</h1>
+            <p class="text-sm">{{ customer.email }}</p>
+          </div>
+        </div>
+
+        <!-- Billings -->
+        <div class="hidden w-full min-h-[50vh] px-5 py-5 flex flex-col gap-5" id="BillingDiv">
+          <h1 class="text-xl font-bold ">Billings & Payments</h1>
+          <p class="text-sm">{{ customer.payment_methods }}</p>
+        </div>
+
+        <!-- Order -->
+        <div class="hidden w-full min-h-[50vh]  flex flex-col gap-5 " id="OrderDiv">
+          <h1 class="text-xl font-bold ">Order History</h1>
+          <!-- Order Looping Div -->
+        <div class="w-full h-full flex flex-col gap-2 "> 
+          <div class="w-full min-h-[8vh] bg-slate-300  rounded-md grid grid-cols-5   ">
+          <!-- Order Heading -->
+            <div class=" h-full w-full text-sm font-bold   flex justify-center items-center  text-center "> ORDER </div>
+            <div class=" h-full w-full text-sm font-bold  flex justify-center items-center  text-center "> DATE </div>
+              <div class=" h-full w-full text-sm font-bold   flex justify-center items-center  text-center "> PAYMENT STATUS </div>
+                <div class=" h-full w-full  text-sm font-bold  flex justify-center items-center  text-center "> FULLFILMENT STATUS</div>
+                 <div class=" h-full w-full  text-sm font-bold  flex justify-center items-center  text-center "> TOTAL</div>
+
+          </div>
+          <!-- Order Looping -->
+
+     {% paginate customer.orders by 5 %}
+  {% for order in customer.orders %}
+  
+
+    <div class="w-full min-h-[8vh] bg-slate-200 grid grid-cols-5  rounded-md">
+<!-- Order Looping Main Content -->
+      <div class=" h-full w-full  flex justify-center items-center text-center  "> <a href="{{ order.customer_url }}">{{ order.name}} </a> </div>
+      
+      <div class=" h-full w-full  flex justify-center items-center  text-center "> {{ order.created_at | date }}</div>
+      
+      <div class=" h-full w-full  flex justify-center items-center  text-center "> {{ order.financial_status }}</div>
+      
+      <div class=" h-full w-full  flex justify-center items-center  text-center ">{{ order.fulfillment_status }} </div>
+       
+      <div class=" h-full w-full  flex justify-center items-center  text-center "> {{ order.total_price | money }} </div>
+
+     </div>
+
+
+
+  {% endfor %}
+
+  {{ paginate | default_pagination }}
+{% endpaginate %}
+
+
+
+
+
+      
+
+        </div>
+        </div>
+
+        <!-- Gift -->
+
+        <div class="hidden w-full min-h-[50vh] px-5 py-5" id="GiftDiv">
+          <h1 class="text-xl font-bold ">Gift Cards</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Div Is Finish -->
+</div>
+
+<script>
+  //buttons
+  const InformationButton = document.getElementById('InformationButton');
+  const BillingButton = document.getElementById('BillingButton');
+  const OrdersButton = document.getElementById('OrdersButton');
+  const GiftButton = document.getElementById('GiftButton');
+
+  //Div
+  const InformationDiv = document.getElementById('InformationDiv');
+  const BillingDiv = document.getElementById('BillingDiv');
+  const OrderDiv = document.getElementById('OrderDiv');
+  const GiftDiv = document.getElementById('GiftDiv');
+
+  // Logic
+  InformationButton.addEventListener('click', () => {
+    InformationDiv.classList.remove('hidden');
+    BillingDiv.classList.add('hidden');
+    OrderDiv.classList.add('hidden');
+    GiftDiv.classList.add('hidden');
+  });
+
+  BillingButton.addEventListener('click', () => {
+    BillingButton.classList.add('active');
+    BillingDiv.classList.remove('hidden');
+    InformationDiv.classList.add('hidden');
+    OrderDiv.classList.add('hidden');
+    GiftDiv.classList.add('hidden');
+  });
+
+  OrdersButton.addEventListener('click', () => {
+    OrderDiv.classList.remove('hidden');
+    BillingDiv.classList.add('hidden');
+    InformationDiv.classList.add('hidden');
+    GiftDiv.classList.add('hidden');
+  });
+
+  GiftButton.addEventListener('click', () => {
+    GiftDiv.classList.remove('hidden');
+    BillingDiv.classList.add('hidden');
+    OrderDiv.classList.add('hidden');
+    InformationDiv.classList.add('hidden');
+  });
+</script>

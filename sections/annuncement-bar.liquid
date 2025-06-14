@@ -1,0 +1,83 @@
+{% if section.settings.Enable_AnnouncementBar == true %}
+<div class="w-full lg:max-w-[100vw] mx-auto h-[7vh] grid grid-cols-1 lg:grid-cols-4 justify-center items-center bg-black text-white">
+
+  <!-- For spacing on large screen -->
+  <div class="hidden lg:flex"></div>
+
+  <!-- ✅ Marquee Text on Mobile, Normal Text on Desktop -->
+  <div class="text-sm lg:gap-5 lg:col-span-2 w-full">
+    <!-- Mobile view: marquee -->
+    <div class="block lg:hidden relative overflow-hidden w-full h-full">
+      <div class="animate-marquee whitespace-nowrap">
+        <span class="inline-block mr-10">
+          {{ section.settings.AnnouncementBar_text }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Desktop view: normal text -->
+    <div class="hidden lg:flex gap-5 justify-center items-center">
+      <p>{{ section.settings.AnnouncementBar_text }}</p>
+      <a href="{{ section.settings.AnnouncementBar_Url }}">
+        <p class="font-bold underline">ShopNow</p>
+      </a>
+    </div>
+  </div>
+
+
+
+</div>
+
+<!-- ✅ Marquee CSS -->
+<style>
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+</style>
+
+{% endif %}
+
+
+
+
+
+{% schema %}
+
+{
+
+    "name": "Announcement Bar ",
+    "settings": [{
+    "type": "text",
+    "id": "AnnouncementBar_text",
+     "label": "Announcement Bar Text ",
+     "default":"Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!" 
+    
+    },
+    {
+    "type": "url",
+    "id": "AnnouncementBar_Url",
+    "label": "AnnouncementBar_Url"
+    
+    },
+
+{
+"type": "checkbox",
+"id": "Enable_AnnouncementBar",
+"label": "Show Announcement Bar ",
+"default":true
+
+}
+
+    ]
+
+}
+
+
+{% endschema %}

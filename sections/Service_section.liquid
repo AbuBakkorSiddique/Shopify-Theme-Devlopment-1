@@ -1,0 +1,119 @@
+<div class="w-full max-w-[100vw] min-h-[46vh] mx-auto px-[3vw] md:px-[8vw] lg:px-[10vw]  flex justify-center items-center py-5 lg:py-0 ">
+
+    <div class="w-full min-h-[30vh]  grid gap-5 lg:gap-0 grid-cols-1 lg:grid-cols-3 ">
+<!------------------ First Div -------------------------------------->
+        <div class=" h-full w-full flex flex-col justify-center items-center p-5 lg:p-0 "> 
+           <div class="h-[70px] w-[70px] rounded-full bg-slate-300 flex justify-center items-center mb-3  "> 
+            <div class="h-[50px] w-[50px] rounded-full bg-slate-600 flex justify-center items-center ">
+             <span class="text-white text-2xl">   {% render 'Car_icons' %}  </span>
+            </div>
+        
+        </div>
+        <h1 class="text-lg font-bold "> {{ section.settings.title_one }} </h1>
+        <p class=" text-sm"> {{ section.settings.paragraph_one }}</p>
+
+        </div>
+
+        <!------------  Second Div --------------------->
+          <div class=" h-full w-full flex flex-col justify-center items-center  p-5 lg:p-0"> 
+           <div class="h-[70px] w-[70px] rounded-full bg-slate-300 flex justify-center items-center mb-3  "> 
+            <div class="h-[50px] w-[50px] rounded-full bg-slate-600 flex justify-center items-center ">
+             <span class="text-white text-2xl">   {% render 'HeadPhone' %}  </span>
+            </div>
+        
+        </div>
+        <h1 class="text-lg font-bold ">{{ section.settings.title_two }} </h1>
+        <p class=" text-sm">  {{ section.settings.Paragraph_two }}</p>
+
+        </div>
+
+        <!----------- third Div --------------------------->
+            <div class=" w-full flex flex-col justify-center items-center  p-5 lg:p-0 "> 
+           <div class="h-[70px] w-[70px] rounded-full bg-slate-300 flex justify-center items-center mb-3  "> 
+            <div class="h-[50px] w-[50px] rounded-full bg-slate-600 flex justify-center items-center ">
+             <span class="text-white text-2xl">   {% render 'Verify_icons' %}  </span>
+            </div>
+        
+        </div>
+        <h1 class="text-lg font-bold "> {{ section.settings.Title_three }} </h1>
+        <p class=" text-sm"> {{ section.settings.Paragraph_three }}</p>
+
+        </div>
+
+
+
+
+
+
+        <!-------------- Sub Div ------------------>
+        </div>
+
+</div>
+
+
+{% schema %}
+{
+
+"name": "Service Section ",
+"settings": [
+
+    {
+    
+    "type": "text",
+    "id": "title_one",
+    "label": "Title One ",
+    "default":"FREE AND FAST DELIVERY",
+
+
+    },
+    {
+    
+    "type": "text",
+    "id": "paragraph_one",
+    "label": "Paragraph One",
+    "default":"Free delivery for all orders over $140"
+    
+    },{
+    "type": "text",
+    "id": "title_two",
+    "label": "Title Two",
+    "default":"24/7 CUSTOMER SERVICE"
+    
+    },
+    {
+    
+    "type": "text",
+    "id": "Paragraph_two",
+    "label": "Paragraph Two ",
+    "default":"Friendly 24/7 customer support"
+    
+    },
+
+    {
+    
+    "type": "text",
+    "id": "Title_three",
+    "label": "Title Three",
+    "default":"MONEY BACK GUARANTEE"
+    
+    
+    },
+    {
+    
+    "type": "text",
+    "id": "Paragraph_three",
+    "label": "Paragraph Three",
+    "default":"We reurn money within 30 days"
+    
+    }
+],
+"presets": [
+    {
+    
+    "name": "Service Section "
+    }
+]
+
+}
+
+{% endschema %}

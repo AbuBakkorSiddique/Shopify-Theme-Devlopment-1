@@ -1,0 +1,223 @@
+<div class="w-full max-w-[100vw] min-h-[60vh] mx-auto px-[3vw] md:px-[8vw] lg:px-[10vw]  flex justify-center items-center ">
+
+    <!-- Sub DIv  Start -->
+   <div  class=" w-full min-h-[40vh] grid grid-cols-2 lg:grid-cols-4 justify-center items-center  gap-5 py-5 lg:py-0 "> 
+
+
+      <!-- Main Items start  -->
+{% for block in section.blocks  %}
+
+    {% case block.type %}
+      {% when "item1"%}
+
+    
+        
+   <div class="min-h-[40vh] w-full border-none shadow-md bg-slate-100 hover:bg-red-600 hover:text-white  rounded-md flex flex-col justify-center items-center gap-2  ">
+    
+    <div class="p-2 bg-gray-600  rounded-full"> 
+<div class="h-[7vh] w-[7vh] rounded-full  flex justify-center items-center text-white bg-black "> {% render 'House_icons' | asset_url %} </div>
+
+    </div>
+
+    <h1 class="text-2xl font-bold "> 10.5k </h1>
+    <p class="text-sm">Sallers active our site </p>
+
+
+   </div>
+          
+        
+      {% when "item2"%}
+
+        
+          
+   <div class="min-h-[40vh] w-full border-none shadow-md bg-slate-100 hover:bg-red-600 hover:text-white  rounded-md flex flex-col justify-center items-center gap-2  ">
+    
+    <div class="p-2 bg-gray-600  rounded-full"> 
+<div class="h-[7vh] w-[7vh] rounded-full  flex justify-center items-center text-white bg-black "> {% render 'Money_icons' | asset_url %} </div>
+
+    </div>
+
+    <h1 class="text-2xl font-bold "> 33k</h1>
+    <p class="text-sm"> Mopnthly Produduct Sale </p>
+
+
+   </div>
+          
+
+     {% when "item3"%}
+
+
+       
+         
+   <div class="min-h-[40vh] w-full border-none shadow-md bg-slate-100 hover:bg-red-600 hover:text-white  rounded-md flex flex-col justify-center items-center gap-2  ">
+    
+    <div class="p-2 bg-gray-600  rounded-full"> 
+<div class="h-[7vh] w-[7vh] rounded-full  flex justify-center items-center text-white bg-black "> {% render 'Bag_icons' | asset_url %} </div>
+
+    </div>
+
+    <h1 class="text-2xl font-bold "> 45.5k</h1>
+    <p class="text-sm"> Customer active in our site </p>
+
+
+   </div>
+         
+
+
+     {% when "item4"%}
+
+       
+        
+   <div class="min-h-[40vh] w-full border-none shadow-md bg-slate-100 hover:bg-red-600 hover:text-white  rounded-md flex flex-col justify-center items-center gap-2  ">
+    
+    <div class="p-2 bg-gray-600  rounded-full"> 
+<div class="h-[7vh] w-[7vh] rounded-full  flex justify-center items-center text-white bg-black "> {% render 'Money_icons' | asset_url %} </div>
+
+    </div>
+
+    <h1 class="text-2xl font-bold "> 25k</h1>
+    <p class="text-sm"> Anual gross sale in our site </p>
+
+
+   </div>
+          
+        
+     
+        
+    {% endcase %}
+
+
+    {% endfor %}
+
+
+  <!-- Main Items Finish - -->
+
+
+
+
+   <!-- Sub Div Finish -->
+    </div>
+
+   
+
+
+</div>
+
+
+{% schema %}
+{
+"name": "Highlight Section",
+"settings": [],
+"blocks": [
+{
+"type": "item1",
+"name":"Item1",
+"settings":[{
+
+"type": "text",
+"id": "heading",
+"label": "heading"
+
+},
+{
+
+"type": "text",
+"id": "paragraph",
+"label": "paragraph"
+}
+
+
+]
+},
+{
+"type": "item2",
+"name":"Item2",
+"settings":[{
+
+"type": "text",
+"id": "heading",
+"label": "heading"
+
+},
+{
+
+"type": "text",
+"id": "paragraph",
+"label": "paragraph"
+}
+
+
+]
+},
+{
+"type": "item3",
+"name":"Item3",
+"settings":[{
+
+"type": "text",
+"id": "heading",
+"label": "heading"
+
+},
+
+
+{
+"type": "text",
+"id": "paragraph",
+"label": "paragraph"
+
+
+}]
+},
+{
+"type": "item4",
+"name":"Item4",
+"settings":[{
+
+"type": "text",
+"id": "heading",
+"label": "heading"
+
+},{
+"type": "text",
+"id": "paragraph",
+"label": "paragraph"
+
+
+}]
+}
+
+
+
+],
+"presets": [{
+"name": "Highlight Section",
+"blocks": [
+{
+
+"type": "item1"
+},
+{
+
+"type": "item2"
+},
+{
+
+"type": "item3"
+},
+{
+
+"type": "item4"
+}
+
+
+]
+
+
+}]
+
+
+
+}
+
+{% endschema %}

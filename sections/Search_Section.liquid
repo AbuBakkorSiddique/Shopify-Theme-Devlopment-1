@@ -1,0 +1,62 @@
+<div class="w-full max-w-[100vw] mx-auto min-h-[100vh] px-[3vw] md:px-[8vw] lg:px-[10vw] flex flex-col gap-10  py-10">
+
+  <!-- Search Heading -->
+  <div class="w-full text-center">
+    <h1 class="text-3xl font-bold">Search Results for "{{ search.terms }}"</h1>
+    <p class="text-gray-700 mt-2">We found {{ search.results_count }} result(s)</p>
+  </div>
+
+  <!-- Search Results Section -->
+  <div class="w-full min-h-[60vh] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {% if search.results_count > 0 %}
+      {% for result in search.results %}
+        <!-- Product Result -->
+        {% if result.object_type == 'product' %}
+          <div cl rounded-lg overflow-hidden bg-white shadow hover:shadow-lg transition-all duration-300">
+            <a href="{{ result.url }}">
+              <img src="{{ result.featured_image | image_url: width: 500 }}" alt="{{ result.title }}" class="w-full h-[300px] object-cover">
+            </a>
+            <div class="p-4 flex flex-col gap-2">
+              <h2 class="text-lg font-semibold">{{ result.title }}</h2>
+              <a href="{{ result.url }}" class="bg-black text-white py-2 px-4 text-center rounded hover:bg-gray-800 transition">View Product</a>
+            </div>
+          </div>
+
+        <!-- Article Result -->
+        {% elsif result.object_type == 'article' %}
+          <div class=" rounded-lg overflow-hidden bg-white shadow hover:shadow-lg transition-all duration-300">
+            <a href="{{ result.url }}">
+              <div class="w-full h-[200px] bg-gray-200 flex justify-center items-center">
+                <span class="text-gray-500">Blog</span>
+              </div>
+            </a>
+            <div class="p-4 flex flex-col gap-2">
+              <h2 class="text-lg font-semibold">{{ result.title }}</h2>
+              <a href="{{ result.url }}" class="bg-blue-600 text-white py-2 px-4 text-center rounded hover:bg-blue-700 transition">Read Article</a>
+            </div>
+          </div>
+
+        <!-- Page or Others -->
+        {% else %}
+          <div class=" rounded-lg overflow-hidden bg-white shadow hover:shadow-lg transition-all duration-300">
+            <a href="{{ result.url }}">
+              <div class="w-full h-[200px] bg-gray-100 flex justify-center items-center">
+                <span class="text-gray-500">Page</span>
+              </div>
+            </a>
+            <div class="p-4 flex flex-col gap-2">
+              <h2 class="text-lg font-semibold">{{ result.title }}</h2>
+              <a href="{{ result.url }}" class=" text-white py-2 px-4 text-center rounded hover:bg-green-700 transition">View Page</a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <!-- No Results -->
+      <div class="col-span-full text-center">
+        <h2 class="text-2xl font-semibold">No results found for "{{ search.terms }}"</h2>
+        <p class="text-gray-600 mt-2">Try searching with different keywords.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>

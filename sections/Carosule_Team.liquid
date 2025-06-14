@@ -1,0 +1,98 @@
+<div class="w-full max-w-[100vw] mx-auto min-h-[100vh] px-[3vw] md:px-[8vw] lg:px-[10vw]  flex justify-center items-center ">
+
+
+    <!-- Sub Div Start -->
+<div class="w-full min-h-[80vh] ">
+
+<div class="w-full h-full swiper myswiper "> 
+    <div class="w-full h-full swiper-wrapper"> 
+
+  {% for block in section.blocks %}
+    <div class="swiper-slide min-h-[80vh] w-full flex flex-row justify-center items-center py-5 lg:py-0 ">
+       <!-- First Row -->
+        <div class="h-full w-full"> 
+       <img src="{{ block.settings.ImagePiker | image_url }}" alt="image" class="h-full w-full object-cover ">
+        </div>
+        <!-- Second Row -->
+        <div class="h-full w-full flex flex-col justify-center items-center ">
+            <h1 class="text-2xl font-bold "> {{ block.settings.Heading }}</h1>
+            <p class="text-sm"> {{ block.settings.SubText }}</p>
+             
+            </div>
+    
+    </div>
+
+  {% endfor %}
+
+
+
+    </div>
+
+</div>
+
+
+
+    <!-- Sub DIv Finish -->
+</div>
+
+    </div>
+
+
+
+
+
+
+    {% schema %}
+{
+
+"name": "Carosule Template",
+"settings": [],
+"blocks": [
+{
+"name":"Item",
+"type": "Item",
+"settings": [
+
+{
+"type": "image_picker",
+"id": "ImagePiker",
+"label": "Image Piker "
+
+},{
+
+    "type": "text",
+    "id": "Heading",
+    "label": "Heading",
+    "default":"Tom Cruise"
+
+
+},
+{
+
+"type": "text",
+"id": "SubText",
+"label": "SubText",
+"default":"Founder & Chairman"
+
+}
+
+
+]
+
+}
+
+
+],
+"presets": [
+    {
+    
+    "name": "Carouse Team "
+    
+    }
+]
+
+
+
+}
+
+    {% endschema %}

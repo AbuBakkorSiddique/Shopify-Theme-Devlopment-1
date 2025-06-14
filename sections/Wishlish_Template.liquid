@@ -1,0 +1,56 @@
+<div class="w-full max-w-[100vw] mx-auto px-[3vw] md:px-[8vw] lg:px-[10vw] min-h-[100vh]  flex flex-col justify-center items-center gap-5">
+    <!-- First Div -->
+    <div class="w-full  min-h-[20vh] flex justify-center items-center">
+        <h1 class="text-xl font-bold"> Your WishList </h1>
+    </div>
+
+    <!-- Second DIv [ cart section ] -->
+    <div class="w-full min-h-[60vh]  mb-5 grid grid-cols-2 lg:grid-cols-4 gap-5 justify-center items-center" id="CartParentDiv">
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        {% for product in collections.all.products %}
+        var wishID = localStorage.getItem("wishID-{{ product.id }}");
+
+        if (wishID == "{{ product.id }}") {
+            var Carts = (`
+                <div class="min-h-[50vh] w-full flex flex-col justify-center bg-slate-100 shadow-md rounded-md items-center relative group" id="cart-{{ product.id }}">
+                    <button id="close-{{ product.id }}" class="absolute py-2 px-5 rounded-md hidden group-hover:flex bg-red-600 top-0 right-0 cursor-pointer">
+                        Remove
+                    </button>
+
+                    <!-- Main Cart Section -->
+                    <div class="min-h-[40vh] w-full">
+                        <img src="{{ product.featured_image | image_url }}" alt="{{ product.title }}" class="h-full w-full object-cover">
+                    </div>
+
+                    <div class="min-h-[5vh] w-full flex justify-center items-center">
+                        {{ product.title }}
+                    </div>
+
+                    <div class="min-h-[10vh] w-full">
+                        <a href="{{ product.url }}">
+                            <button class="h-full w-full bg-black text-white py-2"> View Details </button>
+                        </a>
+                    </div>
+                </div>
+            `);
+
+            const cartParentDiv = document.getElementById("CartParentDiv");
+            cartParentDiv.insertAdjacentHTML('beforeend', Carts);
+
+            // Add click event after element is added
+            setTimeout(() => { // Ensure element is in DOM
+                const closeBtn = document.getElementById("close-{{ product.id }}");
+                closeBtn.addEventListener("click", function () {
+                    const cartItem = document.getElementById("cart-{{ product.id }}");
+                    cartItem.remove();
+                    localStorage.removeItem("wishID-{{ product.id }}");
+                });
+            }, 100);
+        }
+        {% endfor %}
+    });
+</script>

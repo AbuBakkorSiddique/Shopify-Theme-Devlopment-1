@@ -1,0 +1,40 @@
+{
+"name":"Home Page ",
+"sections":{
+"HeroSection":{
+    "type":"hero"
+},
+"FlashSlae":{
+    "type":"flashSale"
+},
+"Category":{
+    "type":"category"
+},
+"BestSelling":{
+
+    "type":"bestSelling"
+},
+"ExhanceBanner":{
+    "type":"Exhance_Banner"
+},
+"Exlopre_Our_Products":{
+    "type":"explore_Our_Products"
+},
+"NewArrivalBanner":{
+    "type":"new_Arrival_Banner"
+},
+"Bendo_Grid":{
+    "type":"Bendo_Grid"
+},
+"ServiceSection":{
+    "type":"Service_section"
+}
+
+
+
+},
+"order":["HeroSection","FlashSlae","Category","BestSelling","ExhanceBanner","Exlopre_Our_Products","NewArrivalBanner","Bendo_Grid","ServiceSection"]
+
+
+
+}

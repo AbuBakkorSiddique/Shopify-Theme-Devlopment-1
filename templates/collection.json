@@ -1,0 +1,15 @@
+{
+"name":"collection Page ",
+"sections":{
+"Collection_Section":{
+    "type":"collection_section"
+}
+
+
+
+},
+"order":["Collection_Section"]
+
+
+
+}

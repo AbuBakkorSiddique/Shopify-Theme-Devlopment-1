@@ -1,0 +1,57 @@
+<div class="w-full max-w-[100vw] mx-auto min-h-[60vh] bg-white   lg:min-h-[100vh] px-[3vw] md:px-[8vw] lg:px-[10vw] flex flex-col gap-5 justify-center items-center p-5">
+  <div class="min-h-[20vh] w-full">
+    <img src="{{section.settings.Image | image_url }}" alt="Image" class="w-full h-auto object-cover "/>
+  </div>
+
+  <p class="text-sm"> {{ section.settings.Paragraph }} </p>
+
+  <a href="{{ section.settings.Url }}">
+    <button class="min-h-[10vh] w-full pt-2 pb-2 pl-6 pr-6 text-white  font-bold bg-cyan-600 rounded-md">
+      {{ section.settings.Text }}
+    </button>
+  </a>
+</div>
+
+
+{% schema %}
+
+{
+"name": "Not Found Page ",
+"settings": [
+
+    {
+    "type": "image_picker",
+    "id": "Image",
+    "label": "Image"
+    
+    },
+
+    {
+    "type": "text",
+    "id": "Paragraph",
+    "label": "Paragraph",
+    "default":"Your visited page not found. You may go home page."
+    
+    },
+    {
+    "type": "url",
+    "id": "Url",
+    "label": "Url",
+    "default":"/"
+    
+    },
+    {
+    "type": "text",
+    "id": "Text",
+    "label": "Button Text",
+    "default":"Back to home page"
+    
+    }
+]
+
+
+
+}
+
+
+{% endschema %}

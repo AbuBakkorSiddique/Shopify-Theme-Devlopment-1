@@ -1,0 +1,89 @@
+<style>
+.HeroSection {
+  background-image: url("{{ section.settings.Hero_Banner | image_url}}");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position:bottom center; 
+
+}
+
+
+    </style>
+
+
+<div class="HeroSection w-full mx-auto max-w-[100vw]  min-h-[60vh] lg:min-h-[100vh] grid grid-cols-2 px-[3vw] md:px-[8vw]  lg:px-[10vw] space-y-5 object-contain ">
+ <!-- Lest Side -->
+    <div class="h-auto w-full flex flex-col justify-center items-start gap-6  ">
+
+        <h1 class="font-bold text-black">{{ section.settings.Hero_Heading }}  </h1>
+        <h1 class="text-3xl lg:text-4xl font-bold text-black  "> {{ section.settings.Hero_Bold_text }} </h1>
+        <a href="{{ section.settings.Button_url}}">
+            <button class="pt-3 pb-3 pl-5 pr-5 border border-black bg-black text-white hover:bg-white hover:text-black hover:border-black font-bold transform transition duration-300 "> {{ section.settings.Hero_Button_text }} </button>
+        </a>
+     
+        
+    
+    </div>
+    <!-- Right Section -->
+    <div>  </div>
+
+
+ </div>
+
+
+
+
+    {% schema %}
+{
+
+"name": "Hero Section ",
+"settings": [{
+"type": "image_picker",
+"id": "Hero_Banner",
+"label": "Hero Image",
+"info": "Image size 100vw * 60vh"
+
+},
+{
+"type": "text",
+"id": "Hero_Heading",
+"label": "Hero_Heading",
+"default":"iPhone 14 Series"
+
+},
+{
+
+"type": "text",
+"id": "Hero_Bold_text",
+"label": "Hero_Bold_Text",
+"default":"Up to 10% off Voucher"
+
+},
+
+{
+"type": "text",
+"id": "Hero_Button_text",
+"label": "Hero_Button_text",
+"default":"Shop Now"
+
+},
+
+{
+"type": "url",
+"id": "Button_url",
+"label": "Button_url",
+"default":"/"
+
+
+
+}
+
+
+
+
+
+]
+
+
+}
+    {% endschema %}

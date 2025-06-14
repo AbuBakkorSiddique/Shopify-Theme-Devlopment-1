@@ -1,0 +1,22 @@
+<button id="whishlist-{{ productID }}"> 
+    {% render 'love_icons' | asset_url %}
+</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Element select koro
+    const Data_wishList = document.getElementById("whishlist-{{ productID }}");
+
+    // Click listener add koro
+    Data_wishList.addEventListener("click", () => {
+      let productId  = {{ productID }};
+      localStorage.setItem("wishID-{{ productID }}",productId);
+
+   
+
+      
+    });
+
+});
+</script>

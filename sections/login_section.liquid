@@ -1,0 +1,130 @@
+<style>
+.LeftSide{
+background-image:url("{{ section.settings.Image |image_url }}") ; 
+
+}
+    </style>
+
+
+
+<div class="w-full max-w-[100vw] mx-auto min-h-[100vh] px-[3vw] md:px-[8vw]  lg:px-[10vw]  grid grid-cols-1 sm:grid-cols-2 justify-center items-center bg-[#ae68d4] ">
+
+    <!-- Left Side -->
+
+    <div class=" min-h-[100vh] sm:h-full w-full LeftSide bg-cover bg-center object-center bg-no-repeat flex flex-col justify-end pb-5  items-center  gap-2 ">
+
+    <h1 class="text-2xl font-bold  text-black "> Welcome To Our Store  </h1>
+    <p class="text-sm  text-black font-bold  "> Top 10 Online Store In World </p>
+ 
+    </div>
+
+    <!--Right SIde-->
+
+    <div class=" h-full w-full  flex flex-col   gap-5 bg-[#ae68d4] p-5 ">
+   <div class="min-h-[10vh] w-full flex justify-center items-center " id="SignInText">
+ <h1 class="text-2xl font-bold "> Sign in </h1>
+   </div>
+
+   <div class="min-h-[60vh] w-full  flex flex-col  " id="SignInDiv">
+ {% form 'customer_login',return_to: routes.account_url %}
+ <p class="text-sm text-red-700">   {{ form.errors | default_errors }} </p>
+
+<div class="flex flex-col gap-5">
+  <input type="email" name="customer[email]" placeholder="Email" class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+  <input type="password" name="ustomer[password]" placeholder="Password" class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+ 
+
+  <button type="submit" class="input w-full outline-none border border-black p-2  text-white bg-black rounded-md " > Sign in </button>
+
+ 
+
+
+</div>
+{% endform %}
+ <!--- Forget Password ----->
+   <div class="w-full flex justify-center items-center mt-2  ">
+    <h1 class="text-white text-sm"> Forget Password ?  <button class="text-black font-bold " id="forgetPassword">Forget Password </button>  </h1>
+    </div>
+
+    </div>
+
+    <!-- Recover Email Part To Show -->
+
+<div class="hidden" id="ForgetPasswordDiv">
+    {% form 'recover_customer_password' %}
+      {{ form.errors | default_errors }}
+  <div class="flex flex-col gap-5">
+        <div class="min-h-[10vh] w-full flex justify-center items-center " id="SignInText">
+ <h1 class="text-2xl font-bold "> Reset Password </h1>
+   </div>
+  <input type="email" name="email" placeholder="Email" class="input w-full outline-none border border-black p-2  text-black rounded-md " />
+ <div class="flex flex-col">
+  <button type="submit" class="input w-full outline-none border border-black p-2  text-white bg-black rounded-md " > Reset Password </button>
+  <h1 class="text-center text-slate-300 mt-2"> Check Your Email and Reset Your Password </h1>
+
+  </div>
+    </div>
+      {% endform %}
+  </div>
+    
+
+  </div>
+
+<!-- Right Div Finish -->
+
+
+
+
+
+
+
+
+<!----------------   Register Section Finish ------------------>
+</div>
+
+
+
+
+<!-- Schema ------------->
+
+{% schema %}
+{
+"name": "Registation Section",
+"settings": [
+{
+
+"type": "image_picker",
+"id": "Image",
+"label": "Image"
+}
+
+
+]
+
+
+}
+
+{% endschema %}
+
+
+
+
+<script>
+
+  const ForgetPasswordspan= document.getElementById("forgetPassword");
+  const SignInText = document.getElementById("SignInText");
+  const SignInDiv=document.getElementById("SignInDiv");
+  const ForgetPasswordDiv = document.getElementById("ForgetPasswordDiv")
+
+ForgetPasswordspan.addEventListener("click",()=>{
+
+SignInText.classList.add("hidden");
+SignInDiv.classList.add("hidden");
+ForgetPasswordDiv.classList.remove("hidden");
+
+
+
+})
+
+
+  </script>

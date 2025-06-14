@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextGadget24</title>
+   {{ content_for_header }}
+
+   <!-- Tailwind css Cli Compile From Assests folder  -->
+   {{ 'theme.css' | asset_url | stylesheet_tag }}
+<!-- Bundle css link up -->
+  {{ 'bundle.css' | asset_url | stylesheet_tag }}
+
+
+</head>
+<body>
+
+   <!-- Announcement Bar Area  -->
+
+    {% section 'annuncement-bar' %}
+    <!-- Navigation Bar -->
+    {% section 'navigationbar' %}
+
+     {{ content_for_layout }}
+
+     <!-- Fotter Section -->
+     {% section 'Fotter' %}
+    <!-- Bundle Js Link UP -->
+    <script src="{{ 'bundle.js' | asset_url }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<div class="w-full max-w-[100vw] mx-auto px-[3vw] md:px-[8vw] lg:px-[10vw] min-h-[100vh]  flex justify-center items-center">
+  <!-- Sub Div start -->
+  <div class="w-full min-h-[80vh]  grid grid-cols-1 lg:grid-cols-2 justify-center gap-8 items-center">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when "text" %}
+          <!-- Text Block -->
+          <div class=" w-full h-full flex flex-col gap-5 justify-center items-start p-5">
+        
+              <h1 class="text-3xl font-bold ">{{ block.settings.heading }}</h1>
+           
+         
+              <p class="">{{ block.settings.paragraph1 }}</p>
+          
+        
+              <p>{{ block.settings.paragraph2 }}</p>
+            
+          </div>
+        {% when "image" %}
+          <!-- Image Block -->
+          <div class=" h-full w-full flex justify-center items-center">
+          
+              <img src="{{ block.settings.image | image_url: width: 800 }}" alt="About Image" class="h-full w-full object-cover">
+           
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image With Text",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default":"Our Story"
+        },
+        {
+          "type": "textarea",
+          "id": "paragraph1",
+          "label": "Paragraph 1",
+          "default": "Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region. "
+        },
+        {
+          "type": "textarea",
+          "id": "paragraph2",
+          "label": "Paragraph 2",
+          "default": "Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image With Text",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+          "heading": "Our Story",
+          "paragraph1":"Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region.",
+           "paragraph2":"Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer"
+          }
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
