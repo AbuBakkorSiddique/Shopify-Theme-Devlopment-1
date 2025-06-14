@@ -1,14 +1,22 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-
-"name":"Login Page ",
-"sections":{
-    "Login_Section":{
-        "type":"login_section"
+  "sections": {
+    "Login_Section": {
+      "type": "login_section",
+      "settings": {
+        "Image": "shopify://shop_images/pexels-michelangelo-buonarroti-8728382_2_0d91140f-95c4-45ac-a853-065a23360e55.jpg"
+      }
     }
-}
-,
-"order":["Login_Section"]
-
-
-
+  },
+  "order": [
+    "Login_Section"
+  ]
 }
