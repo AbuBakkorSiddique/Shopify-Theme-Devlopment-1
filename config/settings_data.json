@@ -28,6 +28,48 @@
       },
       "Fotter": {
         "type": "Fotter",
+        "blocks": {
+          "subscribe_RmGR6b": {
+            "type": "subscribe",
+            "settings": {
+              "Exclusive_title": "Exclusive",
+              "title_two": "Subscribe",
+              "title_three": "Get 10% off your first order"
+            }
+          },
+          "support_M9gmQe": {
+            "type": "support",
+            "settings": {
+              "Title": "Support",
+              "Title_Two": "111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh.",
+              "email": "exclusive@gmail.com",
+              "Phone": "+88015-88888-9999"
+            }
+          },
+          "account_cedW4k": {
+            "type": "account",
+            "settings": {
+              "Link_List": ""
+            }
+          },
+          "quick_link_CjxQ7M": {
+            "type": "quickLink",
+            "settings": {
+              "Link_LisT": ""
+            }
+          },
+          "download_app_PgxNbX": {
+            "type": "download_App",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "subscribe_RmGR6b",
+          "support_M9gmQe",
+          "account_cedW4k",
+          "quick_link_CjxQ7M",
+          "download_app_PgxNbX"
+        ],
         "settings": {
           "Fotter_End_Text": "@ Copyright Rimel 2022. All right reserved"
         }

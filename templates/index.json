@@ -22,7 +22,14 @@
     "FlashSlae": {
       "type": "flashSale",
       "settings": {
-        "Flash_sale_product": [],
+        "Flash_sale_product": [
+          "asus-fhd-gaming-laptop",
+          "breed-dry-dog-food",
+          "canon-eos-dslr-camera",
+          "gp11-shooter-usb-gamepad",
+          "havit-hv-g92-gamepad",
+          "ips-lcd-gaming-monitor"
+        ],
         "Link": "/"
       }
     },
@@ -34,19 +41,42 @@
       "type": "bestSelling",
       "settings": {
         "Best_selleing_Product_Button": "View All",
-        "Best_selleing_Product_Button_Link": "",
-        "Best_Selling_Product_List": []
+        "Best_selleing_Product_Button_Link": "shopify://collections/all",
+        "Best_Selling_Product_List": [
+          "asus-fhd-gaming-laptop",
+          "breed-dry-dog-food",
+          "canon-eos-dslr-camera",
+          "ak-900-wired-keyboard",
+          "jr-zoom-soccer-cleats",
+          "ips-lcd-gaming-monitor",
+          "havit-hv-g92-gamepad",
+          "gp11-shooter-usb-gamepad"
+        ]
       }
     },
     "ExhanceBanner": {
       "type": "Exhance_Banner",
-      "settings": {}
+      "settings": {
+        "Image_Piker": "shopify://shop_images/Frame_694.png"
+      }
     },
     "Exlopre_Our_Products": {
       "type": "explore_Our_Products",
       "settings": {
-        "Button_Url": "",
-        "Select_Eight_Product": []
+        "Button_Url": "shopify://collections/all",
+        "Select_Eight_Product": [
+          "ak-900-wired-keyboard",
+          "asus-fhd-gaming-laptop",
+          "breed-dry-dog-food",
+          "canon-eos-dslr-camera",
+          "gp11-shooter-usb-gamepad",
+          "havit-hv-g92-gamepad",
+          "ips-lcd-gaming-monitor",
+          "jr-zoom-soccer-cleats",
+          "kids-electric-car",
+          "quilted-satin-jacket",
+          "s-series-comfort-chair"
+        ]
       }
     },
     "NewArrivalBanner": {
@@ -55,7 +85,12 @@
     },
     "Bendo_Grid": {
       "type": "Bendo_Grid",
-      "settings": {}
+      "settings": {
+        "Image_One": "shopify://shop_images/Frame_684_b5c29841-3f58-4512-8bc4-a6143d680e55.png",
+        "Image_Two": "shopify://shop_images/Frame_685.png",
+        "Image_Three": "shopify://shop_images/Frame_686.png",
+        "Image_Four": "shopify://shop_images/Frame_687.png"
+      }
     },
     "ServiceSection": {
       "type": "Service_section",
