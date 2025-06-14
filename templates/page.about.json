@@ -35,6 +35,42 @@
     },
     "HighlightSection": {
       "type": "Hilight_section",
+      "blocks": {
+        "item1_CgipBD": {
+          "type": "item1",
+          "settings": {
+            "heading": "",
+            "paragraph": ""
+          }
+        },
+        "item2_pgCH6n": {
+          "type": "item2",
+          "settings": {
+            "heading": "",
+            "paragraph": ""
+          }
+        },
+        "item3_xciwf6": {
+          "type": "item3",
+          "settings": {
+            "heading": "",
+            "paragraph": ""
+          }
+        },
+        "item4_EmhqJa": {
+          "type": "item4",
+          "settings": {
+            "heading": "",
+            "paragraph": ""
+          }
+        }
+      },
+      "block_order": [
+        "item1_CgipBD",
+        "item2_pgCH6n",
+        "item3_xciwf6",
+        "item4_EmhqJa"
+      ],
       "settings": {}
     },
     "CarosuleTeam": {
