@@ -49,18 +49,20 @@
           "account_cedW4k": {
             "type": "account",
             "settings": {
-              "Link_List": ""
+              "Link_List": "account"
             }
           },
           "quick_link_CjxQ7M": {
             "type": "quickLink",
             "settings": {
-              "Link_LisT": ""
+              "Link_LisT": "quiklink"
             }
           },
           "download_app_PgxNbX": {
             "type": "download_App",
-            "settings": {}
+            "settings": {
+              "Image_Piker": "shopify://shop_images/Frame_719.png"
+            }
           }
         },
         "block_order": [
