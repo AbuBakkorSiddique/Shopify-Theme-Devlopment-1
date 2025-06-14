@@ -1,0 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "logo": "shopify://shop_images/4de28502-cd4d-4bd0-bc38-5c4730ce6f0c-small.png",
+    "sections": {
+      "annuncement-bar": {
+        "type": "annuncement-bar",
+        "settings": {
+          "AnnouncementBar_text": "Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!",
+          "AnnouncementBar_Url": "",
+          "Enable_AnnouncementBar": true
+        }
+      },
+      "navigationbar": {
+        "type": "navigationbar",
+        "settings": {
+          "Navigation_Menu": "",
+          "wishlishLink": ""
+        }
+      },
+      "Fotter": {
+        "type": "Fotter",
+        "settings": {
+          "Fotter_End_Text": "@ Copyright Rimel 2022. All right reserved"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

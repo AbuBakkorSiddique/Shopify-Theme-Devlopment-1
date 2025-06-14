@@ -1,40 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-"name":"Home Page ",
-"sections":{
-"HeroSection":{
-    "type":"hero"
-},
-"FlashSlae":{
-    "type":"flashSale"
-},
-"Category":{
-    "type":"category"
-},
-"BestSelling":{
-
-    "type":"bestSelling"
-},
-"ExhanceBanner":{
-    "type":"Exhance_Banner"
-},
-"Exlopre_Our_Products":{
-    "type":"explore_Our_Products"
-},
-"NewArrivalBanner":{
-    "type":"new_Arrival_Banner"
-},
-"Bendo_Grid":{
-    "type":"Bendo_Grid"
-},
-"ServiceSection":{
-    "type":"Service_section"
-}
-
-
-
-},
-"order":["HeroSection","FlashSlae","Category","BestSelling","ExhanceBanner","Exlopre_Our_Products","NewArrivalBanner","Bendo_Grid","ServiceSection"]
-
-
-
+  "sections": {
+    "HeroSection": {
+      "type": "hero",
+      "settings": {
+        "Hero_Banner": "shopify://shop_images/business-pug-working-on-laptop.jpg",
+        "Hero_Heading": "iPhone 14 Series",
+        "Hero_Bold_text": "Up to 10% off Voucher",
+        "Hero_Button_text": "Shop Now",
+        "Button_url": "/"
+      }
+    },
+    "FlashSlae": {
+      "type": "flashSale",
+      "settings": {
+        "Flash_sale_product": [],
+        "Link": "/"
+      }
+    },
+    "Category": {
+      "type": "category",
+      "settings": {}
+    },
+    "BestSelling": {
+      "type": "bestSelling",
+      "settings": {
+        "Best_selleing_Product_Button": "View All",
+        "Best_selleing_Product_Button_Link": "",
+        "Best_Selling_Product_List": []
+      }
+    },
+    "ExhanceBanner": {
+      "type": "Exhance_Banner",
+      "settings": {}
+    },
+    "Exlopre_Our_Products": {
+      "type": "explore_Our_Products",
+      "settings": {
+        "Button_Url": "",
+        "Select_Eight_Product": []
+      }
+    },
+    "NewArrivalBanner": {
+      "type": "new_Arrival_Banner",
+      "settings": {}
+    },
+    "Bendo_Grid": {
+      "type": "Bendo_Grid",
+      "settings": {}
+    },
+    "ServiceSection": {
+      "type": "Service_section",
+      "settings": {
+        "title_one": "FREE AND FAST DELIVERY",
+        "paragraph_one": "Free delivery for all orders over $140",
+        "title_two": "24/7 CUSTOMER SERVICE",
+        "Paragraph_two": "Friendly 24/7 customer support",
+        "Title_three": "MONEY BACK GUARANTEE",
+        "Paragraph_three": "We reurn money within 30 days"
+      }
+    }
+  },
+  "order": [
+    "HeroSection",
+    "FlashSlae",
+    "Category",
+    "BestSelling",
+    "ExhanceBanner",
+    "Exlopre_Our_Products",
+    "NewArrivalBanner",
+    "Bendo_Grid",
+    "ServiceSection"
+  ]
 }
